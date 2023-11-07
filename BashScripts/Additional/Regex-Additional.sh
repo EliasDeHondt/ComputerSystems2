@@ -2,7 +2,7 @@
 ######################
 # Van Elias De Hondt #
 ######################
-
+# Functie: Additional info of regex
 
 if [[ $string =~ ^[0-9]+$ ]]; then
     echo "Dit is een getal."
