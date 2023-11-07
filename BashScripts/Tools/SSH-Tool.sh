@@ -2,16 +2,17 @@
 ######################
 # Van Elias De Hondt #
 ######################
-# FUNCTIE:
+# FUNCTIE: SSH Tool om verbinding te maken met een remote server,
+# een commando uit te voeren op een remote server of data te uploaden naar een remote server
 reset='\e[0m'
 rood='\e[0;31m'
 blauw='\e[0;34m'
 line="############"
+logfile="/var/log/ssh-tool.log"
 Option1="Connection to remote server"
 Option2="Execute command on remote server"
 Option3="Upload data to remote server"
 Option4="View log page"
-logfile="/var/log/ssh-tool.log"
 
 
 function error_exit() { # Functie: Error afhandeling
@@ -19,7 +20,7 @@ function error_exit() { # Functie: Error afhandeling
   exit 1
 }
 
-function main_menu() {
+function main_menu() { # Functie: Hoofdmenu van het script
   echo -e "${blauw}$line\n# SSH Tool #\n$line${reset}"
   echo "1) $Option1"
   echo "2) $Option2"
@@ -27,12 +28,12 @@ function main_menu() {
   echo "4) $Option4"
   read -p "What do you want to do (1-4): " menu_decision
 
-  if [[ ! $menu_decision =~ ^[1-4] ]]; then
+  if [[ ! $menu_decision =~ ^[1-4] ]]; then # Functie: Controleren of de input een getal is tussen 1 en 4
     error_exit "Invalid input. Please enter a number between 1 and 4"
   fi
 }
 
-function basic_info() {
+function basic_info() { # Functie: Basis informatie vragen om verbinding te maken met een remote server
   read -p "What is the port of the ssh server (Default 22): " port
   if [[ $port == "" ]]; then
     port=22
@@ -52,7 +53,7 @@ function basic_info() {
   fi
 }
 
-function make_log() {
+function make_log() { # Functie: Logboek aanmaken
   echo -e "Performed action $1 $(date +'%Y-%m-%d %H:%M:%S')" >> "$logfile"
 }
 
@@ -60,9 +61,10 @@ if [ "$EUID" -ne 0 ]; then # Functie: Controleer of het script als root wordt ui
   error_exit "Starting as root user: e.g. sudo ./`basename $0`"
 fi
 
+# Start van het script
 main_menu
 
-if [ $menu_decision -eq 4 ]; then
+if [ $menu_decision -eq 4 ]; then # Functie: Logboek tonen
   cat "$logfile"
   make_log "$Option4"
   exit 0
@@ -70,18 +72,18 @@ fi
 
 basic_info
 
-if [ $menu_decision -eq 1 ]; then
+if [ $menu_decision -eq 1 ]; then # Functie: Verbinding maken met een remote server
   ssh -p $port $username@$ip
   make_log "$Option1"
 fi
 
-if [ $menu_decision -eq 2 ]; then
+if [ $menu_decision -eq 2 ]; then # Functie: Commando uitvoeren op een remote server
   read -p "Which command do you want to use: " command
   ssh -p $port $username@$ip $command
   make_log "$Option2"
 fi
 
-if [ $menu_decision -eq 3 ]; then
+if [ $menu_decision -eq 3 ]; then # Functie: Data uploaden naar een remote server
   read -p "Please enter the path of the file: " file
   if [ ! -f "$file" ]; then # Functie: Controleren of een bestand bestaat
     error_exit "File $file does not exist"
