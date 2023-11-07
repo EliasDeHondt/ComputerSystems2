@@ -2,7 +2,8 @@
 ######################
 # Van Elias De Hondt #
 ######################
-# FUNCTIE: ?
+# FUNCTIE: En script dat een file opent met daarin een lijst van namen en urls. 
+# Het script moet de namen en urls uit de file halen en in een nieuwe file plaatsen.
 reset='\e[0m'
 rood='\e[0;31m'
 filetemp="temp.txt"

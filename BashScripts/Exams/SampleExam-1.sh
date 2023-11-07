@@ -2,7 +2,7 @@
 ######################
 # Van Elias De Hondt #
 ######################
-# FUNCTIE: ?
+# FUNCTIE: En script dat een file met IP adressen inleest en het aantal IP adressen in klasse A, B en C telt.
 reset='\e[0m'
 rood='\e[0;31m'
 paars='\e[0;35m'
