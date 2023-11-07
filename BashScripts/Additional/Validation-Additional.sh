@@ -71,3 +71,43 @@ if ! command -v $required_program &> /dev/null; then
   error_exit "Het programma '$required_program' is niet geïnstalleerd. Installeer dit programma om verder te gaan."
 fi
 
+# Controleren of een omgevingsvariabele is ingesteld
+if [ -z "$VAR_NAME" ]; then
+  error_exit "De omgevingsvariabele VAR_NAME is niet ingesteld"
+fi
+
+# Controleren of de invoer een geldig getal is
+read -p "Voer een getal in: " user_input
+if ! [[ $user_input =~ ^[0-9]+$ ]]; then
+  error_exit "Ongeldige invoer. Voer alstublieft een getal in"
+fi
+
+# Controleren op lege invoer
+read -p "Voer iets in: " user_input
+if [ -z "$user_input" ]; then
+  error_exit "Er is niets ingevoerd"
+fi
+
+# Controleren of een gebruiker bestaat
+username="example_user"
+if ! id "$username" &>/dev/null; then
+  error_exit "De gebruiker $username bestaat niet"
+fi
+
+# Controleren of een groep bestaat
+groupname="example_group"
+if ! getent group "$groupname" &>/dev/null; then
+  error_exit "De groep $groupname bestaat niet"
+fi
+
+# Controleren of een map leeg is
+directory="example_directory"
+if [ -n "$(find "$directory" -maxdepth 0 -type d -empty)" ]; then
+  error_exit "De map $directory is leeg"
+fi
+
+# Controleren van wachtwoordsterkte
+read -s -p "Voer een nieuw wachtwoord in: " password
+if [ ${#password} -lt 8 ]; then
+  error_exit "Het wachtwoord moet minimaal 8 tekens lang zijn"
+fi
