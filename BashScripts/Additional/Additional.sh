@@ -28,6 +28,64 @@
 # wc /etc/passwd /var/log/ssh-tool.log /var/log/email-tool.log # This displays the number of lines (row), words and bytes in each file
 
 ####################################################################################################
+######################################## Parameter expansion #######################################
+####################################################################################################
+
+name="John" # Toewijzing van een variabele
+echo $name # Variabele weergeven
+echo ${#name} # Lengte van de variabele
+
+
+## Substring van een variabele
+greeting="Good morning" # Substring van een variabele
+echo ${greeting:5}   # Resultaat: morning
+echo ${greeting:0:4} # Resultaat: Good
+
+echo ${age:-30} # Als de variabele niet bestaat, gebruik dan de standaardwaarde
+
+## Vervang een deel van de variabele
+sentence="I love apples, I love oranges" 
+echo ${sentence/love/like}  # Resultaat: I like apples, I love oranges
+echo ${sentence//love/like} # Resultaat: I like apples, I like oranges
+
+
+## Verwijder patroon van begin van variabele
+filename="mydocument.pdf"
+echo ${filename%.pdf}  # Resultaat: mydocument
+# Of
+echo ${filename%.*}   # Resultaat: mydocument
+
+## Array van variabelen
+my_array=(apple orange banana)
+
+# Toegang tot individuele elementen
+echo ${my_array[0]}  # Resultaat: apple
+echo ${my_array[@]}  # Resultaat: apple orange banana
+
+# Aantal elementen in de array
+echo ${#my_array[@]}  # Resultaat: 3
+
+
+
+echo $$ # Huidig proces-ID
+echo $? # Laatst uitgevoerde commando's afsluitstatus
+echo $# # Aantal argumenten dat aan het script is doorgegeven
+
+
+# Indirecte verwijzing naar variabele
+fruit="apple"
+apple="sweet"
+var="fruit"
+echo ${!var}  # Resultaat: sweet
+
+# Patroonvergelijking aan het begin van een string
+string="stackoverflow"
+echo ${string#stack}  # Resultaat: overflow
+
+# Patroonvergelijking aan het einde van een string
+echo ${string%flow}   # Resultaat: stackover
+
+####################################################################################################
 ########## Examples of simple functions that can be used in other scripts (see below) ##############
 ####################################################################################################
 
