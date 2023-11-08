@@ -18,7 +18,7 @@ if [ "$EUID" -ne 0 ]; then
     echo $counter
     let counter+=1 # Eentje bijtellen
   done
-  echo "Opstarten als root gebruiker: bv. sudo ./`basename $0`"
+  echo "Opstarten als root gebruiker: bv. sudo .0"
   exit 1
 fi
 

@@ -13,7 +13,7 @@ function error_exit() { # Functie: Error afhandeling
 }
 
 if [ "$EUID" -ne 0 ]; then # Functie: Controleer of het script als root wordt uitgevoerd
-  error_exit "Opstarten als root gebruiker: bv. sudo ./`basename $0`"
+  error_exit "Opstarten als root gebruiker: bv. sudo .0"
 fi
 
 if [ $# -ne 3 ]; then # Functie: Zorgen dat het script een bepaald aantal argumenten verwacht

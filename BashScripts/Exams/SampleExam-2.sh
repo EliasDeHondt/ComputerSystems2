@@ -2,12 +2,12 @@
 ######################
 # Van Elias De Hondt #
 ######################
-# FUNCTIE: En script dat een file opent met daarin een lijst van namen en urls. 
+# FUNCTIE: En script dat een file opent met daarin een lijst van namen en urls.
 # Het script moet de namen en urls uit de file halen en in een nieuwe file plaatsen.
 reset='\e[0m'
 rood='\e[0;31m'
-filetemp="temp.txt"
 l="--------------------------------------------------------"
+IFS=$'\n'
 
 
 function error_exit() {
@@ -15,27 +15,32 @@ function error_exit() {
   exit 1
 }
 
-# Controleer of het script wordt uitgevoerd als root
-if [ "$EUID" -ne 0 ]; then
-  error_exit "Opstarten als root gebruiker: bv. sudo ./`basename $0`"
+if [ "$EUID" -ne 0 ]; then # Controleer of het script wordt uitgevoerd als root
+  error_exit "Opstarten als root gebruiker: bv. sudo $0"
 fi
 
-if [ ! -f "$1" ]; then
-  error_exit "Argument 1 is geen file"
+if [ $# -ne 1 ]; then # Functie: Zorgen dat het script een bepaald aantal argumenten verwacht
+  error_exit "Ongeldig aantal argumenten. Gebruik: $0 arg1"
 fi
 
-IFS=$'\n'
+if [ ! -f "$1" ]; then # Functie: Controleren of een bestand bestaat
+  error_exit "Bestand $1 bestaat niet"
+else
+  filename="$1"
+fi
 
-for lijn in `cat "$1"`; do
-  urlRx=$(echo "$lijn" | grep -E -o "(http|https)://[A-Za-z0-9.]+")
-  nameRx=$(echo "$lijn" | grep -E -o ">[A-Z].+</a>" | grep -E -o "[A-Z].+[a-z]<" | grep -E -o "[A-Z].+[a-z]")
-  if [ -n "$nameRx" ] && [ -n "$urlRx" ]; then
-    resultaat="$nameRx = $urlRx"
-    echo "$resultaat" >> "$filetemp"
+echo "$l"
+echo "Hier zijn de gevonden links:"
+
+while IFS= read -r lijn; do
+  url=$(echo "$lijn" | grep -E -o "(http|https)://[A-Za-z0-9.]+")
+  name=$(echo "$lijn" | grep -E -o ">[A-Z].+</a>" | grep -E -o "[A-Z].+[a-z]<" | grep -E -o "[A-Z].+[a-z]")
+  if [ ! "$name" = "" ]; then
+    name=${name//&amp;/&}
+    echo "$name = $url"
+    
   fi
-done
+done < "$filename"
 
 echo "$l"
-cat $filetemp
-echo "$l"
-rm $filetemp
+

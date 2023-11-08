@@ -5,74 +5,61 @@
 # FUNCTIE: En script dat een file met IP adressen inleest en het aantal IP adressen in klasse A, B en C telt.
 reset='\e[0m'
 rood='\e[0;31m'
-paars='\e[0;35m'
-filetemp="temp.txt"
-ipaI=0
-ipbI=0
-ipcI=0
-
+cyaan='\e[0;36m'
+ipA=0
+ipB=0
+ipC=0
 
 function error_exit() {
   echo -e "Error: ${rood}$1${reset}"
   exit 1
 }
 
-function ip_filter() {
-  octet=$(echo "$1" | cut -d. -f1)
-  if [ $octet -le 127 ] && [ $octet -ge 0 ]; then
-    ipaI=$(($ipaI+1))
-  fi
-  if [ $octet -le 191 ] && [ $octet -ge 128 ]; then
-    ipbI=$(($ipbI+1))
-  fi
-  if [ $octet -le 255 ] && [ $octet -ge 192 ]; then
-    ipcI=$(($ipcI+1))
-  fi
+function class_ip() {
+  while IFS= read -r lijn; do
+    eerste_octet=$(echo $lijn | grep -E -o "[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+" | grep -E -o "^[0-9]+")
+
+    if [ $eerste_octet -ge 0 ] && [ $eerste_octet -le 127 ]; then
+      let ipA+=1
+    elif [ $eerste_octet -ge 128 ] && [ $eerste_octet -le 191 ]; then
+      let ipB+=1
+    else
+      let ipC+=1
+    fi
+  done < "$file"
 }
 
-# Controleer of het script wordt uitgevoerd als root
-if [ "$EUID" -ne 0 ]; then
-  error_exit "Opstarten als root gebruiker: bv. sudo ./`basename $0`"
+if [ "$EUID" -ne 0 ]; then # Functie: Controleer of het script als root wordt uitgevoerd
+  error_exit "Opstarten als root gebruiker: bv. sudo .0"
 fi
 
-if [ "$1" != "A" ] && [ "$1" != "B" ] && [ "$1" != "C" ]; then
-  error_exit "Argument 1 moet A, B of C"
+if [ $# -ne 2 ]; then # Functie: Zorgen dat het script een bepaald aantal argumenten verwacht
+  error_exit "Ongeldig aantal argumenten. Gebruik: $0 arg1 arg2"
 fi
 
-if [ ! -f "$2" ]; then
-  error_exit "Argument 2 is geen file"
+if [ ! -f "$2" ]; then # Functie: Controleren of een bestand bestaat
+  error_exit "Bestand $2 bestaat niet"
+  else
+  file="$2"
 fi
-
-for lijn in `cat "$2"`; do
-  grepRx=$(echo "$lijn" | grep -E -o "[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}")
-  if [ -n "$grepRx" ]; then
-    resultaat="$grepRx"
-    echo "$resultaat" >> "$filetemp"
-  fi
-done
-
-for lijn in `cat "$filetemp"`; do
-  ip_filter "$lijn"
-done
 
 echo "Aantal IPs in klasse:"
+class_ip
 
 if [ "$1" = "A" ]; then
-  echo -e "${paars}A:$ipaI${reset}"
+  echo -e "${cyaan}A:$ipA${reset}"
 else
-  echo "A:$ipaI"
+  echo "A:$ipA"
 fi
 
 if [ "$1" = "B" ]; then
-  echo -e "${paars}B:$ipbI${reset}"
+  echo -e "${cyaan}B:$ipB${reset}"
 else
-  echo "B:$ipbI"
+  echo "B:$ipB"
 fi
 
 if [ "$1" = "C" ]; then
-  echo -e "${paars}C:$ipcI${reset}"
+  echo -e "${cyaan}C:$ipC${reset}"
 else
-  echo "C:$ipcI"
+  echo "C:$ipC"
 fi
-
-rm "$filetemp"

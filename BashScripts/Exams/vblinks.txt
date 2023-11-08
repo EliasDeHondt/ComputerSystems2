@@ -1,0 +1,18 @@
+              <div class="m-footer-block">
+                <h3 class="m-footer-block__title">Tools &amp; diensten</h3>
+                <ul class="m-footer-block__list">
+                  <li><a href="http://zoeken.tijd.be/" class="m-footer-block__link">Zoeken</a></li>
+                  <li><a href="http://krant.tijd.be/" class="m-footer-block__link">Digitale krant</a></li>
+                  <li><a href="http://tv.tijd.be/" class="m-footer-block__link">Tijd.tv</a></li>
+                  <li><a href="http://foto.tijd.be/" class="m-footer-block__link">Foto</a></li>
+                  <li><a href="http://grafieken.tijd.be/" class="m-footer-block__link">Grafieken</a></li>
+                  <li><a href="http://blogs.tijd.be/" class="m-footer-block__link">Blogs</a></li>
+                  <li><a href="http://bedrijvengids.tijd.be/" class="m-footer-block__link">Bedrijvengids</a></li>
+                  <li><a href="http://vastgoed.tijd.be/" class="m-footer-block__link">Vastgoedgids</a></li>
+                  <li><a href="http://netto.tijd.be/rentegids/" class="m-footer-block__link">Rentegids</a></li>
+                  <li><a href="http://finipedia.tijd.be/" class="m-footer-block__link">Finipedia</a></li>
+                  <li><a href="http://www.tijd.be/jaarverslagen" class="m-footer-block__link">Jaarverslagen</a></li>
+                  <li><a href="http://blogs.tijd.be/tzine/" class="m-footer-block__link">T-zine</a></li>
+                  <li><a href="http://diensten.tijd.be/" class="m-footer-block__link">Nieuwsbrieven &amp; Alerts</a></li>
+                </ul>
+              </div>

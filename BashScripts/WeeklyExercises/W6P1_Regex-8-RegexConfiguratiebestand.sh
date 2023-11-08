@@ -9,7 +9,7 @@ command=$(cat $configuratiebestand | grep -E "ServerName")
 
 # Controleer of het script wordt uitgevoerd als root
 if [ "$EUID" -ne 0 ]; then
-  echo "Opstarten als root gebruiker: bv. sudo ./`basename $0`"
+  echo "Opstarten als root gebruiker: bv. sudo .0"
   exit 1
 fi
 
