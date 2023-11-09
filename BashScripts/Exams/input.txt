@@ -1,0 +1,11 @@
+Veel tekst "scale=1;4 * a(1)" met een bewerking in.
+De tekst heb ik voor niets"scale=2;4 * a(1)"nodig.
+qsfddfsqsdfsdf"scale=3;4 * a(1)"
+"scale=4;4 * a(1)"qdsfqsdfqsdfsqdf
+................"scale=5;4 * a(1)"..............
+-----------"scale=6;4 * a(1)"---------
+12345645648"scale=7;4 * a(1)"31231
+scalescalescale"scale=8;4 * a(1)")))
+''''''''"scale=9;4 * a(1)"''''''''''
+""""""""""scale=10;4 * a(1)""""""""""""""
+
