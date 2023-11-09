@@ -56,7 +56,7 @@ while IFS= read -r lijn; do
 
     berekening_lijn=$(echo "$lijn" | grep -o "\\\".*\"" | sed -e "s/\\\"//;s/\"//")
 
-    berekening=$(bc -l "berekening_lijn")
+    berekening=$(echo $berekening_lijn | bc -l "berekening_lijn")
 
     if [ "$cpu_id" = "$max" ]; then
        cpu_id=0
