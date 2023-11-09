@@ -8,6 +8,8 @@
 # Copyright: 2014 GNU v3 elias.dehondt@outlook.com
 # Versie: 0.1
 # Requires: Standaard shell find commando
+reset=$'\e[0m'
+blauw=$'\e[0;34m'
 l="----"
 string="$1"
 le_string="${#string}"
