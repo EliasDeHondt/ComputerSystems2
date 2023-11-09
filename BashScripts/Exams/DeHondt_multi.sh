@@ -44,6 +44,16 @@ if ! command -v $required_program &> /dev/null; then # Functie: Controleren of e
   error_exit "Het programma '$required_program' is niet geïnstalleerd. Installeer dit programma om verder te gaan."
 fi
 
+if [ "$1" = "-h" ] || [ "$1" = "--help" ]; then 
+  echo "sudo $0 <bestandsnaam>"
+  exit 0
+fi
+
+if [ "$1" = "--versie" ]; then
+  echo "Versie: 0.1"
+  exit 0
+fi
+
 echo -e "Dit is het script van ${blauw}De Hondt Elias${reset}."
 maxcpu
 echo -e "Deze computer heeft $max processoren"
