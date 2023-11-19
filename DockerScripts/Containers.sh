@@ -13,6 +13,11 @@ docker images ls # List all images
 docker diff 88b8664e4df5 # List all changes made to a container (88b8664e4df5)
 docker logs -f 39189b9eb3d7 # Print the logs of a container (39189b9eb3d7)
 
+# Show the stats of all containers (Name, CPU%, MEM%)
+docker stats --no-stream --format "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}"
+
+# Show the stats of all containers (Name, CPU%, MEM%, NET I/O, BLOCK I/O, PIDS)
+docker stats --no-stream
 
 ## Docker run commands
 docker run hello-world # Run a container (print hello world)
