@@ -1,0 +1,16 @@
+######################
+# Van Elias De Hondt #
+######################
+
+
+# Use the latest version of ubuntu as the base image
+FROM ubuntu:latest
+
+# Set the maintainer of this image
+MAINTAINER Elias De Hondt <elias.dehondt@student.kdg.be>
+
+# Install telnet
+RUN apt-get update && apt-get -y install telnet
+
+# Set the command to telnet to the Star Wars server when the container starts
+CMD ["/usr/bin/telnet", "freechess.org", "23"]

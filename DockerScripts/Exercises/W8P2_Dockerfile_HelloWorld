@@ -1,0 +1,9 @@
+######################
+# Van Elias De Hondt #
+######################
+
+# Use the latest version of busybox as the base image
+FROM busybox:latest
+
+# Set the command to echo "Hello World!!" when the container starts
+CMD echo Hello World!!

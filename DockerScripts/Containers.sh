@@ -64,3 +64,10 @@ docker unpause 92e963a87fa2 # Unpause a container (92e963a87fa2)
 
 ## Docker rm commands
 docker rm $(docker ps -aq --no-trunc) # Remove all containers not running
+
+
+## Docker search commands
+docker search centos # Search for a container image (centos)
+
+## Docker history commands
+docker history apache2helloworld:latest # Show the history of a container image (apache2helloworld:latest)
