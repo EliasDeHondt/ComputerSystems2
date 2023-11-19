@@ -14,7 +14,6 @@ docker diff 88b8664e4df5 # List all changes made to a container (88b8664e4df5)
 docker logs -f 39189b9eb3d7 # Print the logs of a container (39189b9eb3d7)
 
 
-
 ## Docker run commands
 docker run hello-world # Run a container (print hello world)
 docker image pull alpine # Pull a container image (alpine linux distribution image lightweight)
@@ -69,10 +68,11 @@ docker rm $(docker ps -aq --no-trunc) # Remove all containers not running
 ## Docker search commands
 docker search centos # Search for a container image (centos)
 
+
 ## Docker history commands
 docker history apache2helloworld:latest # Show the history of a container image (apache2helloworld:latest)
 
+
 ## Delete image commands
 docker rmi bd9cd091f6e9 # Remove a container image (bd9cd091f6e9)
-
 docker image rm $(docker image ls -q ubuntu) # Remove all images (ubuntu) not running
