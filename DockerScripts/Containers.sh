@@ -71,3 +71,8 @@ docker search centos # Search for a container image (centos)
 
 ## Docker history commands
 docker history apache2helloworld:latest # Show the history of a container image (apache2helloworld:latest)
+
+## Delete image commands
+docker rmi bd9cd091f6e9 # Remove a container image (bd9cd091f6e9)
+
+docker image rm $(docker image ls -q ubuntu) # Remove all images (ubuntu) not running

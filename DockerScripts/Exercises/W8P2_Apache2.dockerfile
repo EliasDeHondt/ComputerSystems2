@@ -5,8 +5,10 @@
 # Use the latest version of ubuntu as the base image
 FROM ubuntu:latest
 
-# Set the maintainer of this image
-MAINTAINER Elias De Hondt <elias.dehondt@student.kdg.be>
+# set maintainer
+LABEL author="Elias De Hondt <elias.dehondt@student.kdg.be>" \
+      description="This is a Dockerfile to create a apache2 webserver with a custom index.html file." \
+      version="1.0"
 
 # Update the package list and install apache2 in one command
 RUN apt-get update && \

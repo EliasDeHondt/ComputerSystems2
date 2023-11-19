@@ -6,8 +6,10 @@
 # Use the latest version of ubuntu as the base image
 FROM ubuntu:latest
 
-# Set the maintainer of this image
-MAINTAINER Elias De Hondt <elias.dehondt@student.kdg.be>
+# set maintainer
+LABEL author="Elias De Hondt <elias.dehondt@student.kdg.be>" \
+      description="This is a Dockerfile to create a container that telnet to the Star Wars server." \
+      version="1.0"
 
 # Install telnet
 RUN apt-get update && apt-get -y install telnet
