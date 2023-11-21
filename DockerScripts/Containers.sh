@@ -15,9 +15,9 @@ docker logs -f 39189b9eb3d7 # Print the logs of a container (39189b9eb3d7)
 
 # Show the stats of all containers (Name, CPU%, MEM%)
 docker stats --no-stream --format "table {{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}"
-
-# Show the stats of all containers (Name, CPU%, MEM%, NET I/O, BLOCK I/O, PIDS)
 docker stats --no-stream
+docker stats # Like HTOP but for docker containers
+
 
 ## Docker run commands
 docker run hello-world # Run a container (print hello world)
