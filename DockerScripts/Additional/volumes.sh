@@ -79,3 +79,16 @@ ls -l
 cat access.log # All requests to the webserver
 cat error.log # All errors from the webserver
 cat other_vhosts_access.log # All requests to the webserver from other vhosts
+# of
+tail -f *.log # Follow all logfiles
+
+
+# WEBSERVER AND DATA-ONLY CONTAINER
+
+# Create a data-only container
+docker build . -f W9P2_DataOnlyContainer_Apache2.dockerfile -t dataonlycontainerapache2
+docker run --name DataOnlyContainerApache2 dataonlycontainerapache2:latest
+
+docker build . -f W9P2_WebserverLogfilesOnData-OnlyContainer.dockerfile -t webserverlogfilesondataonlycontainer
+docker run -d -p 8080:80 --volumes-from DataOnlyContainerApache2 --rm --name WebserverLogfilesOnDataOnlyContainer webserverlogfilesondataonlycontainer:latest
+

@@ -202,3 +202,29 @@ docker build . -f W9P2_WebserverLogfilesOnHost.dockerfile -t webserverlogfileson
 # Run the container image (webserverlogfilesonhost) and name the container (W9P2_WebserverLogfilesOnHost)
 docker run -d -p 8080:80 -v /var/log/myhttpd:/var/log/apache2  --rm --name W9P2_WebserverLogfilesOnHost webserverlogfilesonhost:latest
 ####################################################################################################
+
+
+
+####################################################################################################
+############################ W9P2_DataOnlyContainer_Apache2.dockerfile #############################
+####################################################################################################
+
+# Build a container image (dataonlycontainerapache2) from a Dockerfile (W9P2_DataOnlyContainer_Apache2.dockerfile)
+docker build . -f W9P2_DataOnlyContainer_Apache2.dockerfile -t dataonlycontainerapache2
+
+# Run the container image (dataonlycontainerapache2) and name the container (DataOnlyContainerApache2)
+docker run --name DataOnlyContainerApache2 dataonlycontainerapache2:latest
+####################################################################################################
+
+
+
+####################################################################################################
+###################### W9P2_WebserverLogfilesOnData-OnlyContainer.dockerfile #######################
+####################################################################################################
+
+# Build a container image (webserverlogfilesondataonlycontainer) from a Dockerfile (W9P2_WebserverLogfilesOnData-OnlyContainer.dockerfile)
+docker build . -f W9P2_WebserverLogfilesOnData-OnlyContainer.dockerfile -t webserverlogfilesondataonlycontainer
+
+# Run the container image (webserverlogfilesondataonlycontainer) and name the container (WebserverLogfilesOnDataOnlyContainer)
+docker run -d -p 8080:80 --volumes-from DataOnlyContainerApache2 --rm --name WebserverLogfilesOnDataOnlyContainer webserverlogfilesondataonlycontainer:latest
+####################################################################################################
