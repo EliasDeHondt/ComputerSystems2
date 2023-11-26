@@ -66,3 +66,16 @@ cat /tmp/hostfile.txt
 
 # List all mounted volumes between containers and host
 docker inspect --format='{{range .Mounts}}{{.Source}} -> {{.Destination}}{{"\n"}}{{end}}' 9b9934a128e1
+
+
+# WEBSERVER LOGFILES ON HOST
+
+# On Host:
+docker build . -f W9P2_WebserverLogfilesOnHost.dockerfile -t webserverlogfilesonhost
+docker run -d -p 8080:80 -v /var/log/myhttpd:/var/log/apache2  --rm --name W9P2_WebserverLogfilesOnHost webserverlogfilesonhost:latest
+
+cd /var/log/myhttpd
+ls -l
+cat access.log # All requests to the webserver
+cat error.log # All errors from the webserver
+cat other_vhosts_access.log # All requests to the webserver from other vhosts

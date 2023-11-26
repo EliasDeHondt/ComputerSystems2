@@ -199,8 +199,6 @@ docker rmi 911c07f64af9
 docker build . -f W9P2_WebserverLogfilesOnHost.dockerfile -t webserverlogfilesonhost
 
 
-docker run -d -p 80:80 --rm --name W9P2_WebserverLogfilesOnHost webserverlogfilesonhost:latest
-
-sudo docker run -d -p 80:80 -v /var/log/myhttpd:/var/log/apache2 apache2
-9c2f0c0b126f21887efaa35a1432ba7092b69e0c6d523ffd50684e27eeab37ac
+# Run the container image (webserverlogfilesonhost) and name the container (W9P2_WebserverLogfilesOnHost)
+docker run -d -p 8080:80 -v /var/log/myhttpd:/var/log/apache2  --rm --name W9P2_WebserverLogfilesOnHost webserverlogfilesonhost:latest
 ####################################################################################################
