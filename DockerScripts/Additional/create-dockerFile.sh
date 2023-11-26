@@ -150,3 +150,41 @@ docker build . -f W8P2_Persistence1.dockerfile -t persistence2
 # in interactive mode (-it) and remove the container after it has been stopped (--rm)
 docker run -it --rm --name Persistence persistence2:latest
 ####################################################################################################
+
+
+
+####################################################################################################
+################################## W9P2_my-first-repo.dockerfile ###################################
+####################################################################################################
+
+# Build a container image (my-first-repo) from a Dockerfile (W9P2_my-first-repo.dockerfile)
+docker build . -f W9P2_my-first-repo.dockerfile -t eliasdh/my-first-repo:1.0
+
+# Run the container image (my-first-repo) and name the container (my-first-repo)
+docker run -it --rm --name my-first-repo eliasdh/my-first-repo:1.0
+
+# Extra Push to DockerHub
+docker push eliasdh/my-first-repo:1.0
+####################################################################################################
+
+
+
+####################################################################################################
+################################## W9P2_UbuntuPython3.dockerfile ###################################
+####################################################################################################
+
+# Build a container image (ubuntupython3) from a Dockerfile (W9P2_UbuntuPython3.dockerfile)
+docker build . -f W9P2_UbuntuPython3.dockerfile -t localhost:5000/ubuntupython3:1.0
+
+# Run the container image (ubuntupython3) and name the container (ubuntuPython3)
+docker run -it --rm --name ubuntuPython3 ubuntupython3:1.0
+
+# Push to local registry
+docker push localhost:5000/ubuntupython3:1.0
+
+# List all images in the local registry
+curl -i http://localhost:5000/v2/_catalog
+
+# Delete the image from the local disk
+docker rmi 911c07f64af9
+####################################################################################################
