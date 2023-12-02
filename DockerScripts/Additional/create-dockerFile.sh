@@ -228,3 +228,16 @@ docker build . -f W9P2_WebserverLogfilesOnData-OnlyContainer.dockerfile -t webse
 # Run the container image (webserverlogfilesondataonlycontainer) and name the container (WebserverLogfilesOnDataOnlyContainer)
 docker run -d -p 8080:80 --volumes-from DataOnlyContainerApache2 --rm --name WebserverLogfilesOnDataOnlyContainer webserverlogfilesondataonlycontainer:latest
 ####################################################################################################
+
+
+
+####################################################################################################
+################################### W10P2_RabbitMQ.dockerfile ######################################
+####################################################################################################
+
+# Build a container image (rabbitmq) from a Dockerfile (W10P2_RabbitMQ.dockerfile)
+docker build . -f W10P2_RabbitMQ.dockerfile -t rabbitmq
+
+# Run the container image (rabbitmq) and name the container (RabbitMQ)
+docker run -d -p 5672:5672 -p 15672:15672 --rm --name RabbitMQ rabbitmq:latest
+####################################################################################################

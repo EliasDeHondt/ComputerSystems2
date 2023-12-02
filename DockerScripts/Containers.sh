@@ -3,6 +3,9 @@
 # Van Elias De Hondt #
 ######################
 
+## Good to know.
+--restart=always # Restart the container when the host gets restart it
+
 ## Docker commands info
 docker login # Login to docker hub
 docker container ls -a # List all containers
@@ -81,3 +84,18 @@ docker history apache2helloworld:latest # Show the history of a container image 
 ## Delete image commands
 docker rmi bd9cd091f6e9 # Remove a container image (bd9cd091f6e9)
 docker image rm $(docker image ls -q ubuntu) # Remove all images (ubuntu) not running
+
+
+## Network commands
+docker network ls # List all networks
+docker network inspect bridge # Inspect a network (bridge) and show info about it
+sudo docker inspect --format='{{.NetworkSettings.IPAddress}}' 9f40ad1ace9f # Show the IP address of a container
+sudo docker inspect --format='{{.NetworkSettings.Ports}}' 9f40ad1ace9f # Show the ports of a container
+docker network create --driver bridge my-bridge-network # Create a network (my-bridge-network) with the bridge driver
+
+
+# Default networks 
+# (bridge, host, none) 
+# (bridge is the default network) 
+# (host is the host network) 
+# (none is no network)f
