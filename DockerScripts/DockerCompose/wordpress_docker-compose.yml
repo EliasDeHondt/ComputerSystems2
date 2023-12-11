@@ -1,0 +1,30 @@
+######################
+# Van Elias De Hondt #
+######################
+# Wordpress met docker-compose + Database (MariaDB)
+version: '3' 
+services: 
+  db: 
+    image: mariadb 
+    volumes: 
+      - db_data:/var/lib/mysql 
+    restart: always 
+    environment: 
+      MYSQL_ROOT_PASSWORD: ROOT123
+      MYSQL_DATABASE: testdb
+      MYSQL_USER: elias
+      MYSQL_PASSWORD: ROOT123
+  wordpress: 
+    depends_on: 
+      - db 
+    image: wordpress 
+    ports: 
+      - "8000:80" 
+    restart: always 
+    environment: 
+      WORDPRESS_DB_HOST: db:3306
+      WORDPRESS_DB_USER: elias
+      WORDPRESS_DB_NAME: testdb
+      WORDPRESS_DB_PASSWORD: ROOT123
+volumes: 
+  db_data: {}
