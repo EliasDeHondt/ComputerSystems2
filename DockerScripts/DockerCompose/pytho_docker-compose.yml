@@ -1,0 +1,26 @@
+######################
+# Van Elias De Hondt #
+######################
+# Python webserver
+
+version: "3"
+services:
+  pythonweb:
+    image: python:3.6-stretch
+    volumes:
+      - .:/app
+    build: .
+    working_dir: /app
+    ports:
+      - "8765:8765"
+    networks:
+      mybridge:
+        ipv4_address: 172.16.16.16
+
+networks:
+  mybridge:
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.16.0/24
