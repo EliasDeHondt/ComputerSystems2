@@ -89,8 +89,8 @@ docker image rm $(docker image ls -q ubuntu) # Remove all images (ubuntu) not ru
 ## Network commands
 docker network ls # List all networks
 docker network inspect bridge # Inspect a network (bridge) and show info about it
-sudo docker inspect --format='{{.NetworkSettings.IPAddress}}' 9f40ad1ace9f # Show the IP address of a container
-sudo docker inspect --format='{{.NetworkSettings.Ports}}' 9f40ad1ace9f # Show the ports of a container
+docker inspect --format='{{.NetworkSettings.IPAddress}}' 9f40ad1ace9f # Show the IP address of a container
+docker inspect --format='{{.NetworkSettings.Ports}}' 9f40ad1ace9f # Show the ports of a container
 docker network create --driver bridge my-bridge-network # Create a network (my-bridge-network) with the bridge driver
 
 
