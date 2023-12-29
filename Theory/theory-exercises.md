@@ -12,26 +12,34 @@ This are the theory exercises for the course Operating Systems 2.
     - [Exercise 1: Convert to the correct unit](#exercise-1-convert-to-the-correct-unit)
     - [Exercise 2: Where is the MBR located in Windows/Linux](#exercise-2-where-is-the-mbr-located-in-windowslinux)
     - [Exercise 3: Calculate position of character or pixel on screen](#exercise-3-calculate-position-of-character-or-pixel-on-screen)
+    - [Exam questions 1](#exam-questions-1)
 3. [I/O & bestandsbeheer](#io--bestandsbeheer)
     - [Exercise 1: How to configer RAID 1 on Linux](#exercise-1-how-to-configer-raid-1-on-linux)
     - [Exercise 2: How to calculate internal fragmentation](#exercise-2-how-to-calculate-internal-fragmentation)
     - [Exercise 3: How to calculate I-nodes max file size](#exercise-3-how-to-calculate-i-nodes-max-file-size)
     - [Exercise 4: ZFS on Linux](#exercise-4-zfs-on-linux)
+    - [Exam questions 2](#exam-questions-2)
 4. [Geheugenbeheer](#geheugenbeheer)
     - [Exercise 1: Ubuntu 20.04 kernel modules](#exercise-1-ubuntu-2004-kernel-modules)
     - [Exercise 2: Compile a file](#exercise-2-compile-a-file)
     - [Exercise 3: Memory management operation of the call stack](#exercise-3-memory-management-operation-of-the-call-stack)
+    - [Exercise 4: Calculate the physical address (segmentation)](#exercise-4-calculate-the-physical-address-segmentation)
+    - [Exercise 5: Calculate the physical address (paging)](#exercise-5-calculate-the-physical-address-paging)
+    - [Exercise 6: How to show the page size (Ubuntu 20.04)](#exercise-6-how-to-show-the-page-size-ubuntu-2004)
+    - [Exam questions 3](#exam-questions-3)
 5. [Processen](#processen)
+    - [Exam questions 4](#exam-questions-4)
 6. [Interprocess communicatie](#interprocess-communicatie)
+    - [Exam questions 5](#exam-questions-5)
 7. [UI & Virtualisatie](#ui--virtualisatie)
+    - [Exam questions 6](#exam-questions-6)
 8. [Links](#links)
-
 
 ---
 
 ## 🖖Introduction
 
-This repository contains the theory exercises for the course Operating Systems 2. The exercises are divided into the following categories: **Booting & I/O output**, **I/O & bestandsbeheer**, **Geheugenbeheer**, **Processen**, **Interprocess communicatie** and **UI & Virtualisatie**. The exercises are written in Markdown and can be viewed on GitHub or in a Markdown editor such as [Typora](https://typora.io/).
+This repository contains the theory exercises for the course Operating Systems 2. The exercises are divided into the following categories: **Booting & I/O output**, **I/O & bestandsbeheer**, **Geheugenbeheer**, **Processen**, **Interprocess communicatie**, **UI & Virtualisatie** and **Exam questions**. It is recommended to read the theory first before attempting the exercises.
 
 ## 🔄Booting & I/O output
 
@@ -168,6 +176,38 @@ sudo dd if=/dev/sda bs=512 count=1 | hexdump -v
         - ***2*** ***7*** ***2*** ***2*** ***12*** = **0x02722C**
     - 0x1E2345 + 0x02722C = **0x209571**
 
+### ✒️Exam questions 1
+
+1. What are the tasks of an operating system? Give a clear description per task.
+> 
+
+2. What is a Von Neumann architecture?
+> 
+
+3. How can a microprocessor address the ROM?
+> 
+
+4. What is POST?
+> 
+
+5. What is a HAL?
+>
+
+6. What steps does the BIOS perform at startup?
+>
+
+7. What does the MBR look like?
+> 
+
+8. What are the differences between BIOS and UEFI? Explain.
+> 
+
+9. Which components are on a video card? Explain them.
+> 
+
+10. What is memory-mapped I/O?
+> 
+
 ## 📂I/O & bestandsbeheer
 
 ### 📝Exercise 1: How to configer RAID 1 on Linux
@@ -235,6 +275,53 @@ sudo zpool create -m /usr/share/pool new-pool mirror /dev/sdb1 /dev/sdc1 # inclu
 sudo zpool status
 sudo zpool destroy new-pool
 ```
+
+### ✒️Exam questions 2
+
+1. What is the difference between programmed I/O and interrupt driven I/O? 
+> 
+
+2. What is the advantage of interrupt-driven IO?
+> 
+
+3. Explain the operation of a circular buffer. When full? When empty?
+> 
+
+4. What is an ISR? what does it do?
+> 
+
+5. What is a DMA controller? What does this do? Why is who need it?
+> 
+
+6. How does an HDD work? 
+> 
+
+7. How does an SSD work?
+> 
+
+8. What is caching (for hard drives). What is the advantage? What is the disadvantage?
+> 
+
+9. What is internal fragmentation in a file system? give an example.
+> 
+
+10. What is (external) fragmentation of a hard drive? How does this occur?
+> 
+
+11. List five attributes associated with a file could be.
+> 
+
+12. What is a "file allocation table"?
+> 
+
+13. Determining the block size of a file system.
+> 
+
+14. What is LVM.
+> 
+
+15. What are the properties of next generation file systems?
+> 
 
 ## 🧠Geheugenbeheer
 
@@ -349,11 +436,157 @@ int fac(int i) {
 sudo tree -h
 ```
 
+### ✒️Exam questions 3
+
+1. What is the difference between a monolytic, modular and micro kernel?
+> 
+
+2. What is the job of the left one? Discuss the difference between static and dynamic linking. What are the advantages of dynamic linking?
+> 
+
+3. What is fixed partitioning? what 2 shapes are there?
+> 
+
+4. What is internal fragmentation in fixed memory partitioning? Give an example
+> 
+
+5. What is dynamic partitioning?
+> 
+
+6. What is external fragmentation in dynamic partitioning of the memory? Give an example. What is the solution for this problem?
+> 
+
+7. Explain how segmenting works.
+> 
+
+8. What is a segmentation fault?
+> 
+
+9. What is virtual memory? How does virtual memory work?
+> 
+
+10. What is thrashing?
+> 
+
+11. What is a page fault? How does the OS respond to this?
+> 
+
 ## ⚙️Processen
+
+### ✒️Exam questions 4
+
+1. Discuss the parts of a process: stack, data, code, PCB
+> 
+
+2. Explain the 5 states of a process and explain the transitions.
+> 
+
+3. What is a PCB?
+> 
+
+4. What is idle time?
+> 
+
+5. What happens during a pre-emptive context switch?
+> 
+
+6. What is the difference between pre-emptive and non-pre-emptive scheduling?
+> 
+
+7. What is a context switch?
+> 
+
+8. What is scheduling?
+> 
+
+9. How does a process start in Linux? Explain the fork and exec system calls.
+> 
+
+10. What is starvation?
+> 
 
 ## 🤝Interprocess communicatie
 
+### ✒️Exam questions 5
+
+1. What are pipes?
+> 
+
+2. What steps do you need to go through to send a message from one process to another in Unix?
+> 
+
+3. What steps do you need to go through to set up a shared memory segment in Unix?
+>
+
+4. How can the OS share some memory between different processes?
+> 
+
+5. Which memory segments are shared by threads?
+>
+
+6. What is the difference between a process and a thread?
+>
+
+7. What are the advantages and disadvantages of threads?
+>
+
+8. What is the difference between a user-level thread and a kernel-level thread? What are the pros and cons?
+>
+
+9. Why are local variables not shared between threads while global ones are?
+>
+
+10. What is load balancing in a multiprocessor?
+> 
+
+11. What is the difference between a master-slave and an SMP multiprocessor OS?
+> 
+
+12. What is a 'critical section'?
+> 
+
+13. Explain what a semaphore is. What operations can you perform on it and what do they do?
+> 
+
+14. Explain what deadlocks are. When do they perform?
+> 
+
 ## 🖥️UI & Virtualisatie
+
+### ✒️Exam questions 6
+
+1. What components does X-Windows consist of?
+> 
+
+2. What is a Window manager?
+> 
+
+3. What is RDP?
+> 
+
+4. What is a thin client?
+> 
+
+5. What is data deduplication?
+> 
+
+6. What is the difference between SAN and NAS?
+> 
+
+7. Why is virtualization used?
+> 
+
+8. What is full virtualization, paravirtualization, hosted hypervisor, OS virtualization (with drawing)?
+> 
+
+9. What is Public, private, hybrid cloud?
+> 
+
+10. What is IAAS, PAAS, SAAS?
+> 
+
+11. What are Blade servers, what do they share?
+> 
 
 ## 🔗Links
 - 👯 Web hosting company [EliasDH.com](https://eliasdh.com).
