@@ -28,6 +28,12 @@ This are the theory exercises for the course Operating Systems 2.
     - [Exercise 6: How to show the page size (Ubuntu 20.04)](#exercise-6-how-to-show-the-page-size-ubuntu-2004)
     - [Exam questions 3](#exam-questions-3)
 5. [Processen](#processen)
+    - [Exercise 1: Ubuntu process states](#exercise-1-ubuntu-process-states)
+    - [Exercise 2: Scheduling Linux/Windows commands/UI list](#exercise-2-scheduling-linuxwindows-commandsui-list)
+    - [Exercise 3: Nieuw proces starten in Unix](#exercise-3-nieuw-proces-starten-in-unix)
+    - [Exercise 4: Nieuw proces in shell-scripts](#exercise-4-nieuw-proces-in-shell-scripts)
+    - [Exercise 5: Ubuntu timeslice](#exercise-5-ubuntu-timeslice)
+    - [Exercise 6: Scheduling in Linux](#exercise-6-scheduling-in-linux)
     - [Exam questions 4](#exam-questions-4)
 6. [Interprocess communicatie](#interprocess-communicatie)
     - [Exam questions 5](#exam-questions-5)
@@ -387,6 +393,7 @@ sudo ldd myApp_dyn
 
 ### 📝Exercise 3: Memory management operation of the call stack
 
+- File: **fac.c**
 ```c
 main() {
     int a = fac(2);
@@ -400,6 +407,12 @@ int fac(int i) {
     return result;
     // Param=1 -> return-value (1) -> return address -> result=1 -> stack
 }
+```
+
+- Compile
+```bash
+sudo gcc -o fac fac.c
+sudo ./fac
 ```
 
 ### 📝Exercise 4: Calculate the physical address (segmentation)
@@ -571,13 +584,27 @@ sudo ps -e -o state,comm --no-headers | awk '{if ($1=="R") print "Running",$2; e
 - `fork()`: Creates a new process by duplicating the calling process. The new process is referred to as the child process. The calling process is referred to as the parent process.
 - `exec()`: Replaces the current process image with a new process image.
 
-- Example Child Process
+- Example File: **fork.c**
 ```c
 #include <stdio.h>
 #include <unistd.h>
 
-void doe_child(int i) {
-    printf("start van proces %d\n",i);
+int main() { // Parent process
+    int i;
+    for(i=0; i<10; i++) {
+        int f = fork(); // 'fork' creates a new process by duplicating the calling process.
+        if (f==0) {
+            child(i);
+            return 0;
+        }
+    }
+    sleep(3);
+    execl("/bin/ps","ps", "-f", NULL); // 'execl' replaces the current process image with a new process image.
+    printf("Not printed!");
+}
+
+void child(int i) { // Child process
+    printf("start of process %d\n",i);
     int t;
     for(t=0; t<5; t++) {
         sleep(1);
@@ -586,21 +613,10 @@ void doe_child(int i) {
 }
 ```
 
-- Example Parent Process
-```c
-int main() {
-    int i;
-    for(i=0; i<10; i++) {
-        int f = fork(); // 'fork' creates a new process by duplicating the calling process.
-        if (f==0) {
-            doe_child(i);
-            return 0;
-        }
-    }
-    sleep(3);
-    execl("/bin/ps","ps", "-f", NULL); // 'execl' replaces the current process image with a new process image.
-    printf("Niet uitgeprint!");
-}
+- Compile
+```bash
+sudo gcc -o fork fork.c
+sudo ./fork
 ```
 
 ### 📝Exercise 4: Nieuw proces in shell-scripts
@@ -612,6 +628,50 @@ sudo xload &
 - `sudo`: Runs the command with administrative privileges.
 - `xload`: System load average display for X.
 - `&`: Runs the command in the background.
+
+### 📝Exercise 5: Ubuntu timeslice
+
+- What is the order of magnitude of the timeslice at Linux?
+    - User processes: 100 ms
+    - Kernel processes: 10 ms
+
+```bash
+sudo top # Column PR
+```
+- `sudo`: Runs the command with administrative privileges.
+- `top`: Displays Linux processes.
+
+Different priorities:
+- New process: 20
+- User process: 20 - 39
+- Kernel process: 40 - 59
+- Real time process: 60 - 99
+
+### 📝Exercise 6: Scheduling in Linux
+
+- File: **forkbomb.c**
+```c
+#include <stdio.h>
+#include <unistd.h>
+
+int main() {
+	while(1){
+	fork();
+	printf("Child started!\n");
+	}
+}
+```
+
+- Compile
+```bash
+sudo gcc -o forkbomb forkbomb.c
+sudo ./forkbomb
+```
+
+- Kill all processes
+```bash
+sudo killall forkbomb
+```
 
 ### ✒️Exam questions 4
 
