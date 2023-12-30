@@ -297,49 +297,74 @@ sudo zpool destroy new-pool
 ### ✒️Exam questions 2
 
 1. What is the difference between programmed I/O and interrupt driven I/O? 
-> 
+    > The difference is that with programmed I/O the CPU has to wait for the I/O operation to complete. 
 
-2. What is the advantage of interrupt-driven IO?
-> 
+2. What is the advantage of interrupt driven IO?
+    > With interrupt driven I/O the CPU can continue with other tasks while the I/O operation is being performed.
 
 3. Explain the operation of a circular buffer. When full? When empty?
-> 
+    > A circular buffer is a data structure that uses a single, fixed-size buffer as if it were connected end-to-end. This structure lends itself easily to buffering data streams. When the buffer is full, the oldest data is overwritten. When the buffer is empty, no data can be read. (Start = End)
 
 4. What is an ISR? what does it do?
-> 
+    > ISR stands for Interrupt Service Routine. This is a function that is called when an interrupt occurs. The ISR handles the interrupt and sends the result back to the CPU.
 
-5. What is a DMA controller? What does this do? Why is who need it?
-> 
+5. What is a DMA controller? What does this do? Why and who need it?
+> DMA stands for Direct Memory Access. This is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). The DMA controller is a hardware component that manages the DMA transfers. The DMA controller is needed to transfer data between the I/O device and the main memory without the intervention of the CPU.
 
 6. How does an HDD work? 
-> 
+    > HDD stands for Hard Disk Drive.
+    > 1. **Disk platters** -> This is the part of the HDD that stores the data.
+    > 2. **Read/write head** -> This is the part of the HDD that reads and writes the data.
+    > 3. **Cyliners** -> This is the part of the HDD that contains the tracks.
+    > 4. **Tracks** -> This is the part of the HDD that contains the sectors.
+    > 5. **Sectors** -> This is the part of the HDD that contains the data.
 
 7. How does an SSD work?
-> 
+    > SSD stands for Solid State Drive.
+    > 1. **Interface** -> This is the part of the SSD that connects the SSD to the computer.
+    > 2. **Controller** -> This is the part of the SSD that manages the data flow.
+    > 3. **NAND flash memory** -> This is the part of the SSD that stores the data.
 
 8. What is caching (for hard drives). What is the advantage? What is the disadvantage?
-> 
+    > Caching is the process of storing data in a cache. The advantage is that the data can be accessed faster. The disadvantage is that the data can be lost if the cache is not flushed.
 
-9. What is internal fragmentation in a file system? give an example.
-> 
+9. What is internal fragmentation in a file system? Give an example.
+    > Internal fragmentation is the wasted space within a file or memory segment due to the fact that the allocated space is larger than the actual space required. An example is a file that is 10.000 bytes in size and is stored in 3 blocks of 4096 bytes. The last block is only partially filled.
 
 10. What is (external) fragmentation of a hard drive? How does this occur?
-> 
+    > External fragmentation is the non sequential allocation of data blocks in a Hard Disk Drive (HDD). This occurs when files are deleted and new files are created. The new files are stored in the empty blocks, but the empty blocks are not always sequential.
 
 11. List five attributes associated with a file could be.
-> 
+    > 1. **Name** -> This is the name of the file. (e.g. filename)
+    > 2. **Type** -> This is the type of the file. (e.g. .txt)
+    > 3. **Location** -> This is the location of the file. (e.g. /home/user/filename.txt)
+    > 4. **Size** -> This is the size of the file. (e.g. 10.000 bytes)
+    > 5. **Protection** -> This is the protection of the file. (e.g. rwxrwxrwx)
 
 12. What is a "file allocation table"?
-> 
+    > File Allocation Table (FAT) is a file system. The FAT file system is characterized by the file allocation table, which is a table that resides at the very "top" of the volume. The table contains entries for each cluster, which is a group of sectors. Each entry records one of five things: 
+        > 1. The cluster is unused.
+        > 2. The cluster is the last cluster of a file.
+        > 3. The cluster is the last cluster of a file and it is bad.
+        > 4. The cluster is the last cluster of a file and it is reserved.
+        > 5. The cluster number of the next cluster in the file.
 
 13. Determining the block size of a file system.
-> 
+    > The block size of a file system can be determined by using the `stat` command.
 
 14. What is LVM.
-> 
+    > LVM stands for Logical Volume Manager. This is a device mapper target that provides logical volume management for the Linux kernel.
+        > 1. **RAID Functionality**
+        > 2. **Snapshots**
+        > 3. **Encryption**
+        > 4. **Dynamic Volume Resizing**
 
 15. What are the properties of next generation file systems?
-> 
+    > 1. **RAID Functionality**
+    > 2. **Snapshots**
+    > 3. **Copy-on-Write**
+    > 4. **High Storage Capacity**
+    > 5. **Protection Against Data Corruption**
 
 ## 🧠Geheugenbeheer
 
