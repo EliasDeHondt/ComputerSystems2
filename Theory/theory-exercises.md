@@ -575,6 +575,7 @@ sudo ps -e -o state,comm --no-headers | awk '{if ($1=="R") print "Running",$2; e
 ```c
 #include <stdio.h>
 #include <unistd.h>
+
 void doe_child(int i) {
     printf("start van proces %d\n",i);
     int t;
