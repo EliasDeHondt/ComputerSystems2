@@ -185,34 +185,46 @@ sudo dd if=/dev/sda bs=512 count=1 | hexdump -v
 ### ✒️Exam questions 1
 
 1. What are the tasks of an operating system? Give a clear description per task.
-> 
+    > 1. **Boot process** -> This is the startup procedure.
+    > 2. **Hardware abstraction** -> This is the process of hiding the physical characteristics of a device from the user.
+    > 3. **I/O management** -> This is the process of controlling the input and output operations of a computer.
+    > 4. **File management** -> This is the process of organizing and keeping track of files and folders.
+    > 5. **Process management** -> This is the process of managing the processes running on a computer.
+    > 6. **Memory management** -> This is the process of managing the memory of a computer.
+    > 7. **Window management** -> This is the process of managing the windows of a computer.
 
 2. What is a Von Neumann architecture?
-> 
+    > The Von Neumann architecture is a computer architecture based on the stored-program computer concept, where instruction data and program data are stored in the same memory.
 
 3. How can a microprocessor address the ROM?
-> 
+    > The microprocessor can address the ROM by using the address bus.
 
 4. What is POST?
-> 
+    > POST stands for Power-On Self-Test. This is a diagnostic testing sequence that is run by the computer's BIOS when the computer is turned on.
 
 5. What is a HAL?
->
+    > HAL stands for Hardware Abstraction Layer. This is a layer of programming that allows a computer operating system to interact with a hardware device at a general or abstract level rather than at a detailed hardware level.
 
 6. What steps does the BIOS perform at startup?
->
+    > 1. ROM firmware
+    > 2. Boot loader
+    > 3. Kernel
+    > 4. Complete OS
 
 7. What does the MBR look like?
-> 
+    > MBR stands for Master Boot Record. The MBR is located at the first sector of the hard disk (sector 0, cylinder 0, head 0). The first 446 bytes of the MBR usually contain the boot loader code. The next 64 bytes (from byte 446 to 510) contain the partition table, which can contain four records of 16 bytes each for primary partitions. The last 2 bytes (from byte 511 to 512) form the MBR signature. **0xAA55 = Bootable**.
 
 8. What are the differences between BIOS and UEFI? Explain.
-> 
+    > BIOS stands for Basic Input/Output System. UEFI stands for Unified Extensible Firmware Interface. The BIOS is a firmware that is stored on a ROM chip on the motherboard. The UEFI is a firmware that is stored on a flash memory chip on the motherboard. The BIOS is a 16-bit firmware. The UEFI is a 32-bit or 64-bit firmware. The BIOS uses the MBR partitioning scheme. The UEFI uses the GPT partitioning scheme.
 
 9. Which components are on a video card? Explain them.
-> 
+    > 1. **Control unit** -> This is the part of the video card that controls the other components.
+    > 2. **VRAM** -> This is the part of the video card that stores the image data. (Video Random Access Memory)
+    > 3. **GPU** -> This is the part of the video card that processes the image data. (Graphics Processing Unit)
+    > 4. **RAMDAC** -> This is the part of the video card that converts the digital image data to analog signals. (Random Access Memory Digital-to-Analog Converter)
 
 10. What is memory-mapped I/O?
-> 
+    > Memory-mapped I/O is a method for performing input/output between the CPU and peripheral devices. The CPU can address the peripheral devices as if they were memory locations.
 
 ## 📂I/O & bestandsbeheer
 
