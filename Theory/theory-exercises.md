@@ -473,7 +473,7 @@ sudo tree -h
 
 ## ⚙️Processen
 
-### 📝Exercise 1: Ubuntu procestoestanden
+### 📝Exercise 1: Ubuntu process states
 
 1. With which command can you activate the processes and see their process status?
 ```bash
@@ -499,6 +499,61 @@ sudo ps -e
 sudo ps -e -o state,comm --no-headers | awk '{if ($1=="R") print "Running",$2; else if ($1=="S") print "Sleeping",$2; else if ($1=="D") print "Uninterruptible Sleep",$2; else if ($1=="Z") print "Zombie",$2; else if ($1=="T") print "Stopped",$2; else print $1,$2}'
 # It is better to put this in a script :)
 ```
+
+### 📝Exercise 2: Scheduling Linux/Windows commands/UI list
+
+- Linux
+    - `nice`: Runs a program with modified scheduling priority.
+    - `renice`: Alters the scheduling priority of one or more running processes.
+    - `top`: Displays Linux processes.
+    - `ps`: Displays information about a selection of the active processes.
+    - `pstree`: Displays the processes as a tree.
+    - `kill`: Sends a signal to a process.
+    - `killall`: Sends a signal to all processes running any of the specified commands.
+    - `pkill`: Sends a signal to processes based on name and other attributes.
+    - `pgrep`: Looks through the currently running processes and lists the process IDs which matches the selection criteria to stdout.
+    - `xload`: System load average display for X.
+    - `uptime`: Shows how long the system has been running + load.
+    - `vmstat`: Reports information about processes, memory, paging, block IO, traps, disks and cpu activity.
+    - `iostat`: Reports CPU statistics and I/O statistics for tty devices and disks.
+    - `sar`: Collects, reports, or saves system activity information.
+    - `mpstat`: Reports processors related statistics.
+    - `free`: Displays the total amount of free and used physical and swap memory in the system, as well as the buffers and caches used by the kernel.
+    - `top`: Displays Linux processes.
+    - `htop`: Interactive process viewer.
+    - `atop`: Advanced interactive monitor for Linux-systems to view the load on system-level and process-level.
+    - `iotop`: Simple top-like I/O monitor.
+    - `nmon`: Performance monitoring tool for Linux.
+    - `dstat`: Versatile tool for generating system resource statistics.
+    - `pidstat`: Monitors the usage of cpu, memory, io and threads.
+    - `psacct`: Monitors system activities and used to keep track of the processes running on the system.
+    - `lastcomm`: Displays information about previously executed commands.
+    - `lsof`: Lists open files for running Linux processes.
+    - `fuser`: Identifies processes using files or sockets.
+    - `uptime`: Shows how long the system has been running + load.
+    - `w`: Shows who is logged on and what they are doing.
+    - `who`: Shows who is logged on.
+    - `whoami`: Displays the effective username
+
+- Windows
+    - `tasklist`: Displays a list of currently running processes on the local computer.
+    - `taskkill`: Ends one or more tasks or processes.
+    - `wmic`: Displays WMI information inside interactive command shell.
+    - `wmic process`: Displays information about processes.
+    - `wmic process list`: Displays a list of currently running processes.
+    - `wmic process list brief`: Displays a list of currently running processes in brief format.
+    - `wmic process list full`: Displays a list of currently running processes in full format.
+    - `wmic process where name="notepad.exe" get name, processid`: Displays the name and process ID of the notepad.exe process.
+    - `wmic process where name="notepad.exe" call terminate`: Terminates the notepad.exe process.
+    - `wmic process where name="notepad.exe" get name, processid /format:csv`: Displays the name and process ID of the notepad.exe process in CSV format.
+    - `wmic process where name="notepad.exe" get name, processid /format:htable`: Displays the name and process ID of the notepad.exe process in HTML table format.
+    - `wmic process where name="notepad.exe" get name, processid /format:list`: Displays the name and process ID of the notepad.exe process in list format.
+    - `wmic process where name="notepad.exe" get name, processid /format:table`: Displays the name and process ID of the notepad.exe process in table format.
+    - `wmic process where name="notepad.exe" get name, processid /format:value`: Displays the name and process ID of the notepad.exe process in value format.
+    - `wmic process where name="notepad.exe" get name, processid /format:xml`: Displays the name and process ID of the notepad.exe process in XML format.
+    - `wmic process where name="notepad.exe" get name, processid /format:xsl`: Displays the name and process ID of the notepad.exe process in XSL format.
+    - `wmic process where name="notepad.exe" get name, processid /format:rawxml`: Displays the name and process ID of the notepad.exe process in raw XML format.
+    - `wmic process where name="notepad.exe" get name, processid /format:json`: Displays the name and process ID of the notepad.exe process in JSON format.
 
 ### ✒️Exam questions 4
 
