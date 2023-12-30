@@ -473,6 +473,33 @@ sudo tree -h
 
 ## ⚙️Processen
 
+### 📝Exercise 1: Ubuntu procestoestanden
+
+1. With which command can you activate the processes and see their process status?
+```bash
+sudo ps aux
+# or
+sudo ps -e
+```
+
+2. What states exist?
+
+| Name     | Status |
+| -------- | ------ |
+| Running  | R      |
+| Sleeping | S      |
+| Sleep    | D      |
+| Zombie   | Z      |
+| Stopped  | T      |
+| Idle     | I      |
+| Dead     | X      |
+
+3. Create a command that displays the status written out in full, followed by the name of the program that has that status.
+```bash
+sudo ps -e -o state,comm --no-headers | awk '{if ($1=="R") print "Running",$2; else if ($1=="S") print "Sleeping",$2; else if ($1=="D") print "Uninterruptible Sleep",$2; else if ($1=="Z") print "Zombie",$2; else if ($1=="T") print "Stopped",$2; else print $1,$2}'
+# It is better to put this in a script :)
+```
+
 ### ✒️Exam questions 4
 
 1. Discuss the parts of a process: stack, data, code, PCB
