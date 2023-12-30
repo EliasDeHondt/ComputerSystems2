@@ -309,7 +309,7 @@ sudo zpool destroy new-pool
     > ISR stands for Interrupt Service Routine. This is a function that is called when an interrupt occurs. The ISR handles the interrupt and sends the result back to the CPU.
 
 5. What is a DMA controller? What does this do? Why and who need it?
-> DMA stands for Direct Memory Access. This is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). The DMA controller is a hardware component that manages the DMA transfers. The DMA controller is needed to transfer data between the I/O device and the main memory without the intervention of the CPU.
+    > DMA stands for Direct Memory Access. This is a feature of computer systems that allows certain hardware subsystems to access main system memory independently of the central processing unit (CPU). The DMA controller is a hardware component that manages the DMA transfers. The DMA controller is needed to transfer data between the I/O device and the main memory without the intervention of the CPU.
 
 6. How does an HDD work? 
     > HDD stands for Hard Disk Drive.
