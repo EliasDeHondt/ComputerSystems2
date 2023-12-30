@@ -555,6 +555,63 @@ sudo ps -e -o state,comm --no-headers | awk '{if ($1=="R") print "Running",$2; e
     - `wmic process where name="notepad.exe" get name, processid /format:rawxml`: Displays the name and process ID of the notepad.exe process in raw XML format.
     - `wmic process where name="notepad.exe" get name, processid /format:json`: Displays the name and process ID of the notepad.exe process in JSON format.
 
+- UI
+    - `Task Manager`: Displays a list of currently running processes.
+    - `Resource Monitor`: Displays information about processes, memory, paging, block IO, traps, disks and cpu activity.
+    - `Performance Monitor`: Displays CPU statistics and I/O statistics for tty devices and disks.
+    - `Process Explorer`: Displays information about processes.
+    - `Process Hacker`: Displays information about processes.
+    - `Process Monitor`: Displays information about processes.
+    - `Process Lasso`: Displays information about processes.
+    - `Process Tamer`: Displays information about processes.
+    - `Process Piglet`: Displays information about processes.
+
+### 📝Exercise 3: Nieuw proces starten in Unix
+
+- `fork()`: Creates a new process by duplicating the calling process. The new process is referred to as the child process. The calling process is referred to as the parent process.
+- `exec()`: Replaces the current process image with a new process image.
+
+- Example Child Process
+```c
+#include <stdio.h>
+#include <unistd.h>
+void doe_child(int i) {
+    printf("start van proces %d\n",i);
+    int t;
+    for(t=0; t<5; t++) {
+        sleep(1);
+        printf("proces %d: tel=%d\n",i,t);
+    }
+}
+```
+
+- Example Parent Process
+```c
+int main() {
+    int i;
+    for(i=0; i<10; i++) {
+        int f = fork(); // 'fork' creates a new process by duplicating the calling process.
+        if (f==0) {
+            doe_child(i);
+            return 0;
+        }
+    }
+    sleep(3);
+    execl("/bin/ps","ps", "-f", NULL); // 'execl' replaces the current process image with a new process image.
+    printf("Niet uitgeprint!");
+}
+```
+
+### 📝Exercise 4: Nieuw proces in shell-scripts
+
+- Example
+```bash
+sudo xload &
+```
+- `sudo`: Runs the command with administrative privileges.
+- `xload`: System load average display for X.
+- `&`: Runs the command in the background.
+
 ### ✒️Exam questions 4
 
 1. Discuss the parts of a process: stack, data, code, PCB
