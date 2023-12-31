@@ -910,9 +910,109 @@ sudo gcc -o concurrency concurrency.c -pthread
 sudo ./concurrency
 ```
 
-### 📝Exercise 4:
+### 📝Exercise 4: Semaphores
 
+- File: **semaphore.c**
+```c
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include<semaphore.h>
 
+pthread_t tid1, tid2;
+char naam[10];
+sem_t sema;
+
+void* doThread1(void *arg)
+{
+	sem_wait(&sema); /*semafoor NEER*/
+ 	scanf("%s",naam); // Input name for thread 1
+	printf("%s\n",naam);
+	sem_post(&sema); /*semafoor OP*/
+}  
+
+void* doThread2(void *arg)
+{
+	sem_wait(&sema); /* semafoor NEER */
+	scanf("%s",naam); // Input name for thread 2
+	printf("%s\n",naam);
+	sem_post(&sema); /* semafoor OP */
+}
+int main(void)
+{
+    sem_init(&sema, 0, 1);  /* semafoor OP */
+    pthread_create(&tid1, NULL, &doThread1, NULL); // Create thread 1
+    pthread_create(&tid2, NULL, &doThread2, NULL); // Create thread 2
+    pthread_join(tid1, NULL); // Wait for thread 1
+    pthread_join(tid2, NULL); // Wait for thread 2
+    sem_destroy(&sema); /* semafoor WEG */
+}
+```
+
+- Compile
+```bash
+sudo gcc -o semaphore semaphore.c -pthread
+sudo ./semaphore
+```
+
+### 📝Exercise 5: Deadlock
+
+- File: **deadlock.c**
+```c
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+#include <semaphore.h>
+
+pthread_t tid1, tid2;
+char naam[10];
+sem_t sema1, sema2;
+
+void* doThread1(void *arg)
+{
+	sem_wait(&sema1); // Lock sema1
+	printf("Ik heb 1 gelocked, nu nog 2...\n");
+	sleep(1);
+	sem_wait(&sema2); // Lock sema2
+	printf("Nu heb ik 1 en 2 gelocked!\n");
+	sem_post(&sema2); // Unlock sema2
+	sem_post(&sema1); // Unlock sema1
+}  
+
+void* doThread2(void *arg)
+{
+	sem_wait(&sema2); // Lock sema2
+	printf("Ik heb 2 gelocked, nu nog 1...\n");
+	sleep(1);
+	sem_wait(&sema1); // Lock sema1
+	printf("Nu heb ik 2 en 1 gelocked!\n");
+	sem_post(&sema1); // Unlock sema1
+	sem_post(&sema2); // Unlock sema2
+}
+
+int main(void)
+{
+    sem_init(&sema1, 0, 1); // Initialize sema1
+    sem_init(&sema2, 0, 1); // Initialize sema2
+    pthread_create(&tid1, NULL, &doThread1, NULL); // Create thread 1
+    pthread_create(&tid2, NULL, &doThread2, NULL); // Create thread 2
+    pthread_join(tid1, NULL); // Wait for thread 1
+    pthread_join(tid2, NULL); // Wait for thread 2
+    sem_destroy(&sema1); // Destroy sema1
+    sem_destroy(&sema2); // Destroy sema2
+    return 0;
+}
+```
+
+- Compile
+```bash
+sudo gcc -o deadlock deadlock.c -pthread
+sudo ./deadlock
+```
 
 ### ✒️Exam questions 5
 
