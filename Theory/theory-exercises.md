@@ -829,15 +829,15 @@ char bericht[30];
 
 void* doThread1(void *arg)
 {
-        printf("\n Thread 1 stuurt door naar thread 2\n");
-        strcpy(bericht,"Bericht van thread 1");
-        sleep(10);
+    printf("\n Thread 1 stuurt door naar thread 2\n");
+    strcpy(bericht,"Bericht van thread 1");
+    sleep(10);
 }
 
 void* doThread2(void *arg)
 {
-        sleep(10);
-        printf(" Thread 2 ontvangt : %s\n", bericht);
+    sleep(10);
+    printf(" Thread 2 ontvangt : %s\n", bericht);
 }
 
 int main(void)
