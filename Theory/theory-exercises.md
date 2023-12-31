@@ -827,14 +827,14 @@ pthread_t tid1, tid2;
 char bericht[30];
 
 
-void* doThread1(void *arg)
+void* doThread1(void *arg) // Thread 1
 {
     printf("\n Thread 1 stuurt door naar thread 2\n");
     strcpy(bericht,"Bericht van thread 1");
     sleep(10);
 }
 
-void* doThread2(void *arg)
+void* doThread2(void *arg) // Thread 2
 {
     sleep(10);
     printf(" Thread 2 ontvangt : %s\n", bericht);
@@ -842,12 +842,12 @@ void* doThread2(void *arg)
 
 int main(void)
 {
-    pthread_create(&tid1, NULL, &doThread1, NULL);
+    pthread_create(&tid1, NULL, &doThread1, NULL); // Create thread 1
     printf("\n Thread 1 created\n");
-    pthread_create(&tid2, NULL, &doThread2, NULL);
+    pthread_create(&tid2, NULL, &doThread2, NULL); // Create thread 2
     printf("\n Thread 2 created\n");
-    pthread_join(tid1, NULL);
-    pthread_join(tid2, NULL);
+    pthread_join(tid1, NULL); // Wait for thread 1
+    pthread_join(tid2, NULL); // Wait for thread 2
     printf("\n Threads done!\n");
     return 0;
 }
