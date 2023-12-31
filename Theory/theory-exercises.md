@@ -869,7 +869,7 @@ sudo ps -eLf
 
 ### 📝Exercise 3: Concurrency
 
-- File: **concurrency.c**
+- File: **concurrency.c** The program does not work as expected. The output is not always the same. This is because the threads are not synchronized. The threads are not synchronized because the threads are not waiting for each other. The threads are not waiting for each other because the threads are not joined.
 ```c
 #include<stdio.h>
 #include<string.h>
@@ -882,15 +882,15 @@ char naam[10];
 
 void* doThread1(void *arg) // Thread 1
 {
-        scanf("%s",naam);
+    scanf("%s",naam); // Input name for thread 1
 	sleep(3);
 	printf("%s\n",naam);
 }
 
 void* doThread2(void *arg) // Thread 2
 {
-        sleep(2);
-        scanf("%s",naam);
+    sleep(2);
+    scanf("%s",naam); // Input name for thread 2
 	printf("%s\n",naam);
 }
 
@@ -909,6 +909,9 @@ int main(void)
 sudo gcc -o concurrency concurrency.c -pthread
 sudo ./concurrency
 ```
+
+### 📝Exercise 4:
+
 
 
 ### ✒️Exam questions 5
