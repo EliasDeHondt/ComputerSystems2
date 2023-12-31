@@ -489,37 +489,40 @@ sudo tree -h
 ### ✒️Exam questions 3
 
 1. What is the difference between a monolytic, modular and micro kernel?
-> 
+    > 1. **Monolytic kernel** -> This is a kernel that contains all the operating system functions in a single executable image.
+    > 2. **Modular kernel** -> This is a kernel that contains the core functions in a single executable image and the other functions in modules.
+    > 3. **Micro kernel** -> This is a kernel that contains only the core functions in a single executable image and the other functions in user space.
 
-2. What is the job of the left one? Discuss the difference between static and dynamic linking. What are the advantages of dynamic linking?
-> 
+2. What is the job of the linker? Discuss the difference between static and dynamic linking. What are the advantages of dynamic linking?
+    > The linker is a program that combines object files into an executable file. Static linking is the process of linking the object files into the executable file at compile time. Dynamic linking is the process of linking the object files into the executable file at run time. The advantage of dynamic linking is that the executable file is smaller. (.ddl) & (.so) files are used.
 
-3. What is fixed partitioning? what 2 shapes are there?
-> 
+3. What is fixed partitioning? Which two are there?
+    > 1. **Fixed memory partitioning** -> RAM Memory is divided into equal parts. (32M/4 = 8M)
+    > 2. **Dynamic memory partitioning** -> RAM Memory is divided into unequal parts. (32M = 16M, 8M, 4M, 4M)
 
 4. What is internal fragmentation in fixed memory partitioning? Give an example
-> 
+    > Internal fragmentation is the wasted space within a memory segment due to the fact that the allocated space is larger than the actual space required. An example is memory that is 32M in size and is divided into 4 partitions of 8M, 8M, 8M and 8M. And the program is 4M in size.
 
 5. What is dynamic partitioning?
-> 
+    > Dynamic partitioning is the process of dividing the memory into partitions of different sizes.
 
 6. What is external fragmentation in dynamic partitioning of the memory? Give an example. What is the solution for this problem?
-> 
+    > External fragmentation is the non sequential allocation of memory blocks. This occurs when memory blocks are freed and new memory blocks are allocated. The new memory blocks are stored in the empty memory blocks, but the empty memory blocks are not always sequential. The solution is **compaction**.
 
 7. Explain how segmenting works.
-> 
+    > Segmentation is the process of dividing the memory into segments of different sizes. Each segment has a segment number and a segment length. The segment number is used to address the segment. The segment length is used to determine the size of the segment.
 
 8. What is a segmentation fault?
-> 
+    > A segmentation fault is an error that occurs when a program tries to access memory that it does not have access to.
 
 9. What is virtual memory? How does virtual memory work?
-> 
+    > Virtual memory is a memory management technique that allows a computer to compensate for physical memory shortages by temporarily transferring data from random access memory (RAM) to disk storage. Virtual memory works by using a page table to map the virtual addresses to the physical addresses.
 
 10. What is thrashing?
-> 
+    > Thrashing is a condition in which excessive paging occurs, causing the system to spend more time paging than executing.
 
 11. What is a page fault? How does the OS respond to this?
-> 
+    > A page fault is an error that occurs when a program tries to access a page that is not in memory. The OS responds to this by loading the page into memory.
 
 ## ⚙️Processen
 
