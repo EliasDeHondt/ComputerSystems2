@@ -867,6 +867,50 @@ sudo ps -eLf
 ![theory-exercises-2](/Images/theory-exercises-2.png)
 
 
+### 📝Exercise 3: Concurrency
+
+- File: **concurrency.c**
+```c
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+pthread_t tid1, tid2;
+char naam[10];
+
+void* doThread1(void *arg) // Thread 1
+{
+        scanf("%s",naam);
+	sleep(3);
+	printf("%s\n",naam);
+}
+
+void* doThread2(void *arg) // Thread 2
+{
+        sleep(2);
+        scanf("%s",naam);
+	printf("%s\n",naam);
+}
+
+int main(void)
+{
+    pthread_create(&tid1, NULL, &doThread1, NULL); // Create thread 1
+    pthread_create(&tid2, NULL, &doThread2, NULL); // Create thread 2
+    pthread_join(tid1, NULL); // Wait for thread 1
+    pthread_join(tid2, NULL); // Wait for thread 2
+    return 0;
+}
+```
+
+- Compile
+```bash
+sudo gcc -o concurrency concurrency.c -pthread
+sudo ./concurrency
+```
+
+
 ### ✒️Exam questions 5
 
 1. What are pipes?
