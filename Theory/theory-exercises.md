@@ -744,6 +744,76 @@ sudo killall forkbomb
 
 ## 🤝Interprocess communicatie
 
+### 📝Exercise 1: Unix message queues
+
+- File: **server.c**
+```c
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <unistd.h>
+
+#define MSGKEY 123
+
+struct msgform {
+	long	type;
+	char	message[255];
+};
+
+int main() {
+	int msgid=msgget(MSGKEY, 511 | IPC_CREAT);
+	printf("Message queue %d gecreëerd. Nu wachten...\n", msgid);
+	
+	struct msgform message;
+	int result = msgrcv(msgid, &message, 255, 0, 0);
+	printf("Bericht ontvangen: %s\n", message.message);
+    
+    msgctl(msgid, IPC_RMID, 0);
+}
+```
+
+- File: **client.c**
+```c
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/ipc.h>
+#include <sys/msg.h>
+#include <unistd.h>
+#include <string.h>
+
+#define MSGKEY 123
+
+struct msgform {
+	long	type;
+	char	message[255];
+};
+
+int main() {
+	int msgid=msgget(MSGKEY,511);
+	printf("Ga nu een bericht sturen op de queue...\n");
+	
+	struct msgform message;
+	message.type = 1;
+	strcpy(message.message, "Hello, world!");
+	msgsnd(msgid,&message,255,0);
+}
+```
+
+- Compile
+```bash
+sudo gcc -o server server.c
+sudo gcc -o client client.c
+sudo ./server
+sudo ./client
+```
+
+- Which command can you use in Linux to see message queues?
+```bash
+sudo ipcs -q
+```
+
+
 ### ✒️Exam questions 5
 
 1. What are pipes?
