@@ -813,6 +813,59 @@ sudo ./client
 sudo ipcs -q
 ```
 
+### 📝Exercise 2: Threads in Linux
+
+- File: **thread.c**
+```c
+#include<stdio.h>
+#include<string.h>
+#include<pthread.h>
+#include<stdlib.h>
+#include<unistd.h>
+
+pthread_t tid1, tid2;
+char bericht[30];
+
+
+void* doThread1(void *arg)
+{
+        printf("\n Thread 1 stuurt door naar thread 2\n");
+        strcpy(bericht,"Bericht van thread 1");
+        sleep(10);
+}
+
+void* doThread2(void *arg)
+{
+        sleep(10);
+        printf(" Thread 2 ontvangt : %s\n", bericht);
+}
+
+int main(void)
+{
+    pthread_create(&tid1, NULL, &doThread1, NULL);
+    printf("\n Thread 1 created\n");
+    pthread_create(&tid2, NULL, &doThread2, NULL);
+    printf("\n Thread 2 created\n");
+    pthread_join(tid1, NULL);
+    pthread_join(tid2, NULL);
+    printf("\n Threads done!\n");
+    return 0;
+}
+```
+
+- Compile
+```bash
+sudo gcc -o thread thread.c -pthread
+sudo ./thread
+```
+
+- Which command allows you to view threads in Linux?
+```bash
+sudo ps -eLf
+```
+
+![theory-exercises-2](/Images/theory-exercises-2.png)
+
 
 ### ✒️Exam questions 5
 
