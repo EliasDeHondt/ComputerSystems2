@@ -36,14 +36,15 @@ This are the theory exercises for the course Operating Systems 2.
     - [Exercise 6: Scheduling in Linux](#exercise-6-scheduling-in-linux)
     - [Exam questions 4](#exam-questions-4)
 6. [Interprocess communicatie](#interprocess-communicatie)
-    - [Exercise 1: Ubuntu pipes](#exercise-1-ubuntu-pipes)
-    - [Exercise 2: Ubuntu named pipes](#exercise-2-ubuntu-named-pipes)
-    - [Exercise 3: Ubuntu FIFO](#exercise-3-ubuntu-fifo)
-    - [Exercise 4: Ubuntu signals](#exercise-4-ubuntu-signals)
-    - [Exercise 5: Ubuntu shared memory](#exercise-5-ubuntu-shared-memory)
-    - [Exercise 6: Ubuntu message queues](#exercise-6-ubuntu-message-queues)
+    - [Exercise 1: Unix message queues](#exercise-1-unix-message-queues)
+    - [Exercise 2: Threads in Linux](#exercise-2-threads-in-linux)
+    - [Exercise 3: Concurrency](#exercise-3-concurrency)
+    - [Exercise 4: Semaphores](#exercise-4-semaphores)
+    - [Exercise 5: Deadlock](#exercise-5-deadlock)
     - [Exam questions 5](#exam-questions-5)
 7. [UI & Virtualisatie](#ui--virtualisatie)
+    - [Exercise 1: Ubuntu 20.04 Window Manager, Desktop Environment, Display Manager](#exercise-1-ubuntu-2004-window-manager-desktop-environment-display-manager)
+    - [Exercise 2: Ubuntu 20.04 X Server SSH](#exercise-2-ubuntu-2004-x-server-ssh)
     - [Exam questions 6](#exam-questions-6)
 8. [Links](#links)
 
@@ -1089,7 +1090,7 @@ sudo ./deadlock
 
 ## 🖥️UI & Virtualisatie
 
-### 📝Exercise 1: X Windows Ubuntu 20.04 test
+### 📝Exercise 1: Ubuntu 20.04 Window Manager, Desktop Environment, Display Manager
 
 - Press at the login screen `Ctrl + Alt + F3` to go to the terminal.
 - Login with your username and password.
@@ -1124,40 +1125,74 @@ sudo ./deadlock
     4. `sudo service gdm start` to go back to the login screen.
     5. `Ctrl + Alt + F1` to go back to the login screen.
 
+### 📝Exercise 2: Ubuntu 20.04 X Server SSH
+
+- Run the following command to connect to the server.
+    ```bash
+    ssh -X elias@<IP>
+    ```
+
+- Run the following command on the host to test x applications.
+    ```bash
+    sudo pcmanfm
+    ```
+
 ### ✒️Exam questions 6
 
 1. What components does X-Windows consist of?
-    > 
+    > A complete -> X-server -> mouse, keyboard, screen.
+        > 1. **Window manager** -> This is the part of the X-Windows system that manages the windows.
+        >   - Minimize
+        >   - Maximize
+        >   - Close
+        >   - Move
+        >   - Resize
+        > 2. **Desktop environment** -> This is the part of the X-Windows system that provides a graphical user interface.
+        >   - Menu
+        >   - Tool bar
+        >   - Wallpaper
+        >   - Icons
+        > 3. **Display manager** -> This is the part of the X-Windows system that manages the display.
+        >   - Login screen
+        >   - Session
 
 2. What is a Window manager?
-    > 
+    > A window manager is a program that manages the windows. It is responsible for minimizing, maximizing, closing, moving and resizing the windows.
 
 3. What is RDP?
-    > 
+    > RDP stands for Remote Desktop Protocol. This is a protocol that allows a user to connect to a remote computer. The user can use the remote computer as if it were his own computer.
 
 4. What is a thin client?
-    > 
+    > A thin client is a computer that does not have a hard drive. It uses a remote computer to run programs.
 
 5. What is data deduplication?
-    > 
+    > Data deduplication is a technique that eliminates duplicate copies of data. This reduces the amount of storage space required.
 
 6. What is the difference between SAN and NAS?
-    > 
+    > 1. **SAN (Storage Area Network)** -> This is a network that provides access to consolidated, block-level data storage.
+    > 2. **NAS (Network Attached Storage)** -> This is a network that provides access to consolidated, file-level data storage.
 
 7. Why is virtualization used?
-    > 
+    > Virtualization is used to reduce costs, increase efficiency and improve security. It is also used to consolidate servers and to provide a test environment.
 
-8. What is full virtualization, paravirtualization, hosted hypervisor, OS virtualization (with drawing)?
-    > 
+8. What is Full virtualisation - Hosted hypervisor, Full virtualisation - Bare Metal hypervisor, paravirtualization, OS virtualization?
+    > 1. **Full virtualisation - Hosted hypervisor** -> This is a type of virtualisation in which the hypervisor runs on top of the host operating system. `Hardware -> Host OS -> Hypervisor -> Guest OS`.
+    > 2. **Full virtualisation - Bare Metal hypervisor** -> This is a type of virtualisation in which the hypervisor runs directly on the hardware. `Hardware -> Hypervisor -> Guest OS`.
+    > 3. **Paravirtualization** -> This is a type of virtualisation in which the guest operating system is modified to run on top of the hypervisor. `Hardware -> Hypervisor -> Guest OS`.
+    > 4. **OS virtualization** -> This is a type of virtualisation where the guest OS uses the underlying kernel of the host OS. `Hardware -> Host OS (Kernel) -> Guest OS`.
 
-9. What is Public, private, hybrid cloud?
-    > 
+9. What is Public cloud, Private cloud, Hybrid cloud?
+    > 1. **Public cloud** -> This is a cloud that is owned and operated by a third-party cloud service provider. e.g. Amazon Web Services (AWS), Microsoft Azure, Google Cloud Platform (GCP).
+    > 2. **Private cloud** -> This is a cloud that is owned and operated by an organization. e.g. On-premises, Co-location.
+    > 3. **Hybrid cloud** -> This is a cloud that is a combination of a public cloud and a private cloud.
 
 10. What is IAAS, PAAS, SAAS?
-    > 
+    > 1. **IAAS (Infrastructure as a Service)** -> This is a cloud computing service that provides Network, Storage and Compute resources.
+    > 2. **PAAS (Platform as a Service)** -> This is a cloud computing service that provides Network, Storage, Compute resources, Middleware and runtime environments.
+    > 3. **SAAS (Software as a Service)** -> This is a cloud computing service that provides Network, Storage, Compute resources, Middleware, runtime environments and Applications.
 
 11. What are Blade servers, what do they share?
-    > 
+    > Blade servers are servers that are designed to be installed in a blade enclosure. They share power, cooling, networking and management.
 
 ## 🔗Links
 - 👯 Web hosting company [EliasDH.com](https://eliasdh.com).
