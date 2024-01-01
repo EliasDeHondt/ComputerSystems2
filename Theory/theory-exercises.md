@@ -1092,37 +1092,37 @@ sudo ./deadlock
 ### ✒️Exam questions 6
 
 1. What components does X-Windows consist of?
-> 
+    > 
 
 2. What is a Window manager?
-> 
+    > 
 
 3. What is RDP?
-> 
+    > 
 
 4. What is a thin client?
-> 
+    > 
 
 5. What is data deduplication?
-> 
+    > 
 
 6. What is the difference between SAN and NAS?
-> 
+    > 
 
 7. Why is virtualization used?
-> 
+    > 
 
 8. What is full virtualization, paravirtualization, hosted hypervisor, OS virtualization (with drawing)?
-> 
+    > 
 
 9. What is Public, private, hybrid cloud?
-> 
+    > 
 
 10. What is IAAS, PAAS, SAAS?
-> 
+    > 
 
 11. What are Blade servers, what do they share?
-> 
+    > 
 
 ## 🔗Links
 - 👯 Web hosting company [EliasDH.com](https://eliasdh.com).
