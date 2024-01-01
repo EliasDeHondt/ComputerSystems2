@@ -36,6 +36,12 @@ This are the theory exercises for the course Operating Systems 2.
     - [Exercise 6: Scheduling in Linux](#exercise-6-scheduling-in-linux)
     - [Exam questions 4](#exam-questions-4)
 6. [Interprocess communicatie](#interprocess-communicatie)
+    - [Exercise 1: Ubuntu pipes](#exercise-1-ubuntu-pipes)
+    - [Exercise 2: Ubuntu named pipes](#exercise-2-ubuntu-named-pipes)
+    - [Exercise 3: Ubuntu FIFO](#exercise-3-ubuntu-fifo)
+    - [Exercise 4: Ubuntu signals](#exercise-4-ubuntu-signals)
+    - [Exercise 5: Ubuntu shared memory](#exercise-5-ubuntu-shared-memory)
+    - [Exercise 6: Ubuntu message queues](#exercise-6-ubuntu-message-queues)
     - [Exam questions 5](#exam-questions-5)
 7. [UI & Virtualisatie](#ui--virtualisatie)
     - [Exam questions 6](#exam-questions-6)
@@ -1027,46 +1033,59 @@ sudo ./deadlock
 ### ✒️Exam questions 5
 
 1. What are pipes?
-> 
+    > Pipes are a method of interprocess communication that allows the output of one process to be used as the input of another process.
+    > e.g. `cat file.txt | grep "hello" | wc -l > result.txt`
 
 2. What steps do you need to go through to send a message from one process to another in Unix?
-> 
+    > 1. Create a message queue. `msgget`
+    > 2. Send a message to the message queue. `msgsnd`
+    > 3. Receive a message from the message queue. `msgrcv`
+    > 4. Delete the message queue. `msgctl`
 
 3. What steps do you need to go through to set up a shared memory segment in Unix?
->
+    > 1. Create a shared memory segment. `shmget`
+    > 2. Attach the shared memory segment to the address space of the process. `shmat`
+    > 3. Detach the shared memory segment from the address space of the process. `shmdt`
+    > 4. Delete the shared memory segment. `shmctl`
 
 4. How can the OS share some memory between different processes?
-> 
+    > The OS can share some memory between different processes by using shared memory. Shared memory is a memory segment that is shared by multiple processes. The memory segment is attached to the address space of the process.
 
 5. Which memory segments are shared by threads?
->
+    > The data (heap) and code (machine code) memory segments are shared by threads. The stack memory segment is not shared by threads. Each thread has its own stack memory segment.
 
 6. What is the difference between a process and a thread?
->
+    > A process is an instance of a program that is being executed. A thread is a sequence of instructions that can be executed independently of other threads.
 
 7. What are the advantages and disadvantages of threads?
->
+    > The advantages of threads are that they are lightweight and they share memory. The disadvantages of threads are that they are difficult to debug and they are difficult to synchronize.
 
 8. What is the difference between a user-level thread and a kernel-level thread? What are the pros and cons?
->
+    > - **User-level thread** Con -> The OS does not see any distinction between the process and all threads within it.
+    > - **User-level thread** Pro -> The OS does not need to do many context switches.
+    > - **Kernel-level thread** Con -> The OS needs to do many context switches.
+    > - **Kernel-level thread** Pro -> The OS can schedule the threads independently.
 
 9. Why are local variables not shared between threads while global ones are?
->
+    > Local variables are not shared between threads because each thread has its own stack memory segment. Global variables are shared between threads because the data (heap) memory segment is shared between threads.
 
 10. What is load balancing in a multiprocessor?
-> 
+    > Load balancing is the process of distributing the workload evenly across all processors (cores).
 
 11. What is the difference between a master-slave and an SMP multiprocessor OS?
-> 
+    > - **Master-slave** -> The master processor (core) is responsible for scheduling the processes. The slave processors (cores) are responsible for executing the processes. The master processor (core) is a single point of failure. (Dictatorship)
+    > - **SMP** -> All processors (cores) are responsible for scheduling and executing the processes. All processors (cores) are equal. (Democracy)
 
 12. What is a 'critical section'?
-> 
+    > A critical section is a section of code that can only be executed by one thread at a time.
 
 13. Explain what a semaphore is. What operations can you perform on it and what do they do?
-> 
+    > A semaphore is a synchronization mechanism that is used to control access to a shared resource. The operations that can be performed on a semaphore are:
+    > - **sem_wait** -> This operation decrements the value of the semaphore. If the value of the semaphore is less than or equal to zero, the thread is blocked. (x <= 0 = block)
+    > - **sem_post** -> This operation increments the value of the semaphore. If the value of the semaphore is greater than zero, the thread is unblocked. (x > 0 = unblock)
 
-14. Explain what deadlocks are. When do they perform?
-> 
+14. Explain what deadlocks are. When do they happen?
+    > A deadlock is a condition in which two or more threads are waiting for each other to release a resource. Deadlocks happen when two or more threads are waiting for each other to release a resource.
 
 ## 🖥️UI & Virtualisatie
 
