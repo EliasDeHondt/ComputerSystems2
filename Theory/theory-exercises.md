@@ -1089,6 +1089,34 @@ sudo ./deadlock
 
 ## 🖥️UI & Virtualisatie
 
+### 📝Exercise 1: X Windows Ubuntu 20.04 test
+
+- Press at the login screen `Ctrl + Alt + F3` to go to the terminal.
+- Login with your username and password.
+- Run the following command to stop `gdm`
+    ```bash
+    sudo service gdm stop
+    sudo init 3
+    ```
+- Run the following command to install `xterm blackbox` and `xinit`
+    ```bash
+    sudo apt install xterm blackbox -y
+    ```
+- Run the following command to start `xinit` this is the X server.
+    ```bash
+    sudo xinit
+    ```
+- Run the following command to test `:)`
+    ```bash
+    xeyes –geometry +400+400 & # This program is a pair of eyes that follow the mouse cursor.
+    xcalc –geometry +600+100 & # This program is a calculator.
+
+    ```
+- Run the following command to start `blackbox` this is the window manager.
+    ```bash
+    blackbox &
+    ```
+
 ### ✒️Exam questions 6
 
 1. What components does X-Windows consist of?
