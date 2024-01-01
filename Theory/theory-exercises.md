@@ -1117,6 +1117,13 @@ sudo ./deadlock
     blackbox &
     ```
 
+- Now do the following steps to go back to the original configuration.
+    1. `Ctrl + C` to stop `xinit`
+    2. `Ctrl + Alt + F3` to go to the terminal.
+    3. `Ctrl + C` to stop `blackbox`
+    4. `sudo service gdm start` to go back to the login screen.
+    5. `Ctrl + Alt + F1` to go back to the login screen.
+
 ### ✒️Exam questions 6
 
 1. What components does X-Windows consist of?
