@@ -716,34 +716,41 @@ sudo killall forkbomb
 ### ✒️Exam questions 4
 
 1. Discuss the parts of a process: stack, data, code, PCB
-> 
+    > 1. **Stack** -> This is the part of the process that stores the local variables and function calls.
+    > 2. **Data (heap)** -> This is the part of the process that stores the global variables and dynamic memory.
+    > 3. **Code (machine code)** -> This is the part of the process that stores the machine code.
+    > 4. **PCB (Process Control Block)** -> This is the part of the process that stores the process information.
 
 2. Explain the 5 states of a process and explain the transitions.
-> 
+    > 1. **New** -> This is the state of a process that is being created.
+    > 2. **Ready** -> This is the state of a process that is ready to run.
+    > 3. **Running** -> This is the state of a process that is running.
+    > 4. **Blocked** -> This is the state of a process that is waiting for an event.
+    > 5. **Exit** -> This is the state of a process that is finished.
 
 3. What is a PCB?
-> 
+    > PCB stands for Process Control Block. This is a data structure that contains information about a process.
 
 4. What is idle time?
-> 
+    > Idle time is the time that the CPU is not being used.
 
 5. What happens during a pre-emptive context switch?
-> 
+    > During a pre-emptive context switch, the CPU switches from one process to another. The CPU saves the state of the current process and loads the state of the next process.
 
 6. What is the difference between pre-emptive and non-pre-emptive scheduling?
-> 
+    > Pre-emptive scheduling is a scheduling method that allows the CPU to switch from one process to another. Non-pre-emptive scheduling is a scheduling method that does not allow the CPU to switch from one process to another.
 
 7. What is a context switch?
-> 
+    > A context switch is the process of saving the state of the current process and loading the state of the next process.
 
 8. What is scheduling?
-> 
+    > Scheduling is the process of determining which process will run on the CPU.
 
-9. How does a process start in Linux? Explain the fork and exec system calls.
-> 
+9. How does a process start in Linux? Explain the fork(); and exec(); system calls.
+    > A process starts in Linux by using the fork(); and exec(); system calls. The fork(); system call creates a new process by duplicating the calling process. The exec(); system call replaces the current process image with a new process image.
 
 10. What is starvation?
-> 
+    > Starvation is a condition in which a process is unable to run because it is waiting for a resource that is being held by another process.
 
 ## 🤝Interprocess communicatie
 
