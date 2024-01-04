@@ -1,0 +1,38 @@
+######################
+# Van Elias De Hondt #
+######################
+# Cluster V1
+
+version: "3.8"
+
+services: # Services configuration
+
+  webserver1: # Webserver 1 configuration
+    container_name: webserver1
+    image: ubuntu:22.04
+    ports:
+      - "8080:80"
+    networks:
+      internal:
+        ipv4_address: 10.0.1.1
+    volumes:
+      - webserver1:/var/www/html
+    restart: always
+
+volumes: # Volumes configuration
+
+  webserver1: # Webserver 1 volume configuration
+    driver: local
+    driver_opts:
+      type: 'none'
+      o: 'bind'
+      device: '/cluster1/webservices/webserver1'
+
+networks: # Network configuration
+  
+  internal: # Internal network configuration
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 10.0.0.0/8

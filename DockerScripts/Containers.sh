@@ -99,3 +99,15 @@ docker network create --driver bridge my-bridge-network # Create a network (my-b
 # (bridge is the default network) 
 # (host is the host network) 
 # (none is no network)f
+
+
+# Testing ground :)
+dokcer pull ubuntu:latest
+docker container run -it ubuntu:latest ls # Run command on new container. [stop]
+docker container run -it ubuntu:latest /bin/bash # Start container and go into the container. [stop]
+docker container run -d ubuntu:latest tail -f /dev/null # Start container and keep it running. [running]
+docker container -it exec ddf45e66f531 /bin/bash # Go into a running container. [running]
+
+
+
+docker stop $(docker ps -q) # Stop all containers
