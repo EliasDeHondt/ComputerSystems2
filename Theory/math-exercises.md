@@ -27,7 +27,7 @@ This is a collection of math exercises for the course Operating Systems 2.
 
 ## 🖖Introduction
 
-This is a collection of math exercises for the course Operating Systems 2. The exercises are divided into 3 categories: Booting & I/O output, I/O & bestandsbeheer and Geheugenbeheer.
+This is a collection of math exercises for the course Operating Systems 2. The exercises are divided into 3 categories: Booting & I/O output, I/O & bestandsbeheer and Geheugenbeheer. The completion of this file should not take more than 2 hours.
 
 ## 🔄Booting & I/O output
 
