@@ -1,7 +1,7 @@
 ######################
 # Van Elias De Hondt #
 ######################
-# Cluster V1
+# Cluster setup
 
 version: "3.8"
 
@@ -36,3 +36,10 @@ networks: # Network configuration
       driver: default
       config:
         - subnet: 10.0.0.0/8
+
+
+# Step 1: Go to the directory
+# cd DockerComposeCluster
+
+# Step 3: Run the docker compose file
+# docker-compose -f cluster_setup_docker-compose.yml up
