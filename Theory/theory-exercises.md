@@ -507,7 +507,7 @@ sudo tree -h
     > 1. **Fixed memory partitioning** -> RAM Memory is divided into equal parts. (32M/4 = 8M)
     > 2. **Dynamic memory partitioning** -> RAM Memory is divided into unequal parts. (32M = 16M, 8M, 4M, 4M)
 
-4. What is internal fragmentation in fixed memory partitioning? Give an example
+4. What is internal fragmentation in fixed memory partitioning? Give an example.
     > Internal fragmentation is the wasted space within a memory segment due to the fact that the allocated space is larger than the actual space required. An example is memory that is 32M in size and is divided into 4 partitions of 8M, 8M, 8M and 8M. And the program is 4M in size.
 
 5. What is dynamic partitioning?
