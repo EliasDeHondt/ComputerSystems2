@@ -10,7 +10,7 @@
 ####################################################################################################
 
 ## Make docker image
-docker run -i -t ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
+docker run -it ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
 
 apt-get update # Update the package list
 apt-get install -y wget # Install wget
@@ -30,7 +30,7 @@ docker images ubuntu_wget # List all images (grep for ubuntu_wget)
 ####################################################################################################
 
 ## Make docker image
-docker run -i -t ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
+docker run -it ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
 
 apt-get update # Update the package list
 apt-get install -y figlet # Install figlet
@@ -54,7 +54,7 @@ docker container run ubuntu_figlet_hello_eliasdh figlet "Hello EliasDH"
 ####################################################################################################
 
 ## Make docker image
-docker run -i -t ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
+docker run -it ubuntu:18.04 /bin/bash # Run a container (ubuntu:18.04) and start an interactive shell in the container (bash shell)
 
 apt-get -yqq update # Update the package list
 apt-get -y install apache2 # Install apache2
@@ -65,5 +65,5 @@ docker images ubuntu_apache2 # List all images (grep for ubuntu_apache2)
 docker inspect ubuntu_apache2 # Inspect the ubuntu_apache2 image
 
 ## Run docker image
-docker container run -ti ubuntu_apache2 /bin/bash # Run a container (ubuntu_apache2) and start an interactive shell in the container (bash shell)
+docker container run -it ubuntu_apache2 /bin/bash # Run a container (ubuntu_apache2) and start an interactive shell in the container (bash shell)
 ####################################################################################################
