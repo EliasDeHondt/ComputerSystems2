@@ -780,11 +780,11 @@ struct msgform {
 
 int main() {
 	int msgid=msgget(MSGKEY, 511 | IPC_CREAT);
-	printf("Message queue %d gecreëerd. Nu wachten...\n", msgid);
+	printf("Message queue %d created. Now wait...\n", msgid);
 	
 	struct msgform message;
 	int result = msgrcv(msgid, &message, 255, 0, 0);
-	printf("Bericht ontvangen: %s\n", message.message);
+	printf("Message received: %s\n", message.message);
     
     msgctl(msgid, IPC_RMID, 0);
 }
@@ -808,7 +808,7 @@ struct msgform {
 
 int main() {
 	int msgid=msgget(MSGKEY,511);
-	printf("Ga nu een bericht sturen op de queue...\n");
+	printf("Now send a message to the queue....\n");
 	
 	struct msgform message;
 	message.type = 1;
@@ -834,27 +834,27 @@ sudo ipcs -q
 
 - File: **thread.c**
 ```c
-#include<stdio.h>
-#include<string.h>
-#include<pthread.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 pthread_t tid1, tid2;
-char bericht[30];
+char message[30];
 
 
 void* doThread1(void *arg) // Thread 1
 {
-    printf("\n Thread 1 stuurt door naar thread 2\n");
-    strcpy(bericht,"Bericht van thread 1");
+    printf("\n Thread 1 forwards to thread 2\n");
+    strcpy(message,"message from thread 1");
     sleep(10);
 }
 
 void* doThread2(void *arg) // Thread 2
 {
     sleep(10);
-    printf(" Thread 2 ontvangt : %s\n", bericht);
+    printf(" Thread 2 receives : %s\n", message);
 }
 
 int main(void)
@@ -888,27 +888,27 @@ sudo ps -eLf
 
 - File: **concurrency.c** The program does not work as expected. The output is not always the same. This is because the threads are not synchronized. The threads are not synchronized because the threads are not waiting for each other. The threads are not waiting for each other because the threads are not joined.
 ```c
-#include<stdio.h>
-#include<string.h>
-#include<pthread.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
 
 pthread_t tid1, tid2;
-char naam[10];
+char name[10];
 
 void* doThread1(void *arg) // Thread 1
 {
-    scanf("%s",naam); // Input name for thread 1
+    scanf("%s",name); // Input name for thread 1
 	sleep(3);
-	printf("%s\n",naam);
+	printf("%s\n",name);
 }
 
 void* doThread2(void *arg) // Thread 2
 {
     sleep(2);
-    scanf("%s",naam); // Input name for thread 2
-	printf("%s\n",naam);
+    scanf("%s",name); // Input name for thread 2
+	printf("%s\n",name);
 }
 
 int main(void)
@@ -931,32 +931,33 @@ sudo ./concurrency
 
 - File: **semaphore.c**
 ```c
-#include<stdio.h>
-#include<string.h>
-#include<pthread.h>
-#include<stdlib.h>
-#include<unistd.h>
-#include<semaphore.h>
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
+#include <semaphore.h>
 
 pthread_t tid1, tid2;
-char naam[10];
+char name[10];
 sem_t sema;
 
 void* doThread1(void *arg)
 {
 	sem_wait(&sema); /*semafoor NEER*/
- 	scanf("%s",naam); // Input name for thread 1
-	printf("%s\n",naam);
+ 	scanf("%s",name); // Input name for thread 1
+	printf("%s\n",name);
 	sem_post(&sema); /*semafoor OP*/
 }  
 
 void* doThread2(void *arg)
 {
 	sem_wait(&sema); /* semafoor NEER */
-	scanf("%s",naam); // Input name for thread 2
-	printf("%s\n",naam);
+	scanf("%s",name); // Input name for thread 2
+	printf("%s\n",name);
 	sem_post(&sema); /* semafoor OP */
 }
+
 int main(void)
 {
     sem_init(&sema, 0, 1);  /* semafoor OP */
@@ -978,24 +979,24 @@ sudo ./semaphore
 
 - File: **deadlock.c**
 ```c
-#include<stdio.h>
-#include<string.h>
-#include<pthread.h>
-#include<stdlib.h>
-#include<unistd.h>
+#include <stdio.h>
+#include <string.h>
+#include <pthread.h>
+#include <stdlib.h>
+#include <unistd.h>
 #include <semaphore.h>
 
 pthread_t tid1, tid2;
-char naam[10];
+char name[10];
 sem_t sema1, sema2;
 
 void* doThread1(void *arg)
 {
 	sem_wait(&sema1); // Lock sema1
-	printf("Ik heb 1 gelocked, nu nog 2...\n");
+	printf("I locked 1, now only 2...\n");
 	sleep(1);
 	sem_wait(&sema2); // Lock sema2
-	printf("Nu heb ik 1 en 2 gelocked!\n");
+	printf("Now I have locked 1 and 2!\n");
 	sem_post(&sema2); // Unlock sema2
 	sem_post(&sema1); // Unlock sema1
 }  
@@ -1003,10 +1004,10 @@ void* doThread1(void *arg)
 void* doThread2(void *arg)
 {
 	sem_wait(&sema2); // Lock sema2
-	printf("Ik heb 2 gelocked, nu nog 1...\n");
+	printf("I locked 2, now only 1...\n");
 	sleep(1);
 	sem_wait(&sema1); // Lock sema1
-	printf("Nu heb ik 2 en 1 gelocked!\n");
+	printf("Now I have locked 2 and 1!\n");
 	sem_post(&sema1); // Unlock sema1
 	sem_post(&sema2); // Unlock sema2
 }
