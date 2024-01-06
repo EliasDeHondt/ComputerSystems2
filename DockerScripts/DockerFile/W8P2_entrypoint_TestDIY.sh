@@ -4,26 +4,22 @@
 ######################
 
 
-# 
 show_notes() {
     echo "----- Your Notes -----"
     cat notes.txt
     echo "----------------------"
 }
 
-# 
 add_note() {
     echo "$1" >> notes.txt
     echo "Note added: '$1'"
 }
 
-# 
 clear_notes() {
     > notes.txt
     echo "All notes cleared!"
 }
 
-# 
 case "$1" in
     show)
         show_notes
@@ -40,5 +36,4 @@ case "$1" in
         exit 1
 esac
 
-# 
 sleep infinity

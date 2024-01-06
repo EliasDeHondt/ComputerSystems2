@@ -2,22 +2,22 @@
 # Van Elias De Hondt #
 ######################
 
-# Definiëren van de applicatiestructuur
-# notities/
+# Defining the application structure
+# notes/
 # │
 # ├── Dockerfile
 # ├── notes.txt
 # └── README.md
 
-# COPY: Het wordt hoofdzakelijk gebruikt om bestanden van de host naar de image te kopiëren. 
-# Het is eenvoudig en duidelijk in zijn functionaliteit: het kopieert bestanden van de host naar de container.
+# COPY: It is mainly used to copy files from the host to the image.
+# It is simple and straightforward in its functionality: it copies files from the host to the container.
 
-# ADD: Voert dezelfde taak uit als COPY (bestanden kopiëren van de host naar de container), 
-# maar heeft extra functionaliteit. Het kan ook URL's hanteren en bestanden van een URL downloaden, 
-# daarnaast kan het tar-archieven automatisch uitpakken naar de doellocatie in de container.
+# ADD: Performs the same task as COPY (copying files from the host to the container),
+# but has additional functionality. It can also handle URLs and download files from a URL,
+# in addition, it can automatically extract tar archives to the target location in the container.
 
 
-# Gebruik de Alpine-image als basisimage
+# Use the Alpine image as the base image
 FROM alpine:latest
 
 # set maintainer
@@ -25,18 +25,18 @@ LABEL author="Elias De Hondt <elias.dehondt@student.kdg.be>" \
       description="This is a Dockerfile to create a container that prints the contents of a notes.txt file." \
       version="1.0"
 
-# Definieer een omgevingsvariabele voor de notitiebestandslocatie
+# Define an environment variable for the note file location
 ENV NOTES_FILE_PATH=/notes/notes.txt
 
-# Werkdirectory instellen naar /notes
+# Set working directory to /notes
 WORKDIR /notes
 
-# Kopieer het notitiebestand naar de container
+# Copy the notes file to the container
 ADD W8P2_Notes_TestDIY.txt $NOTES_FILE_PATH
 
-# Voeg een entrypoint script toe
+# Add an entrypoint script
 COPY W8P2_entrypoint_TestDIY.sh /notes/entrypoint.sh
 RUN chmod +x /notes/entrypoint.sh
 
-# Definieer het entrypoint script als de standaard opstartopdracht
+# Define the entrypoint script as the default startup command
 ENTRYPOINT ["/notes/entrypoint.sh"]
