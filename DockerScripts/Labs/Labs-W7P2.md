@@ -9,11 +9,11 @@ This file contains all related information regarding the lab of the week in ques
 
 1. [Introduction](#introduction)
 2. [Labs](#labs)
-    - [Lab 1: First images and containers](#lab-1-first-images-and-containers)
-    - [Lab 2: Exploring docker with Alpine: a step-by-step guide](#lab-2-exploring-docker-with-alpine-a-step-by-step-guide)
-    - [Lab 3: Docker operations and container management (Exploration)](#lab-3-docker-operations-and-container-management-exploration)
-    - [Lab 4: Creating and sharing custom docker images (Exploration)](#lab-4-creating-and-sharing-custom-docker-images-exploration)
-    - [Lab 5: Building a custom Apache webserver image in docker (Exploration)](#lab-5-building-a-custom-apache-webserver-image-in-docker-exploration)
+    - [🔎Lab 1: Docker-First-Images-And-Containers-LAB1-SimpleHelloWorld.pdf](#lab-1-docker-first-images-and-containers-lab1-simplehelloworldpdf)
+    - [🔎Lab 2: Docker-First-Images-And-Containers-LAB2-Images-And-Containers.pdf](#lab-2-docker-first-images-and-containers-lab2-images-and-containerspdf)
+    - [🔎Lab 3: Docker-First-Images-And-Containers-LAB3-Tag-Interactive-Daemon-Mgmt.pdf](#lab-3-docker-first-images-and-containers-lab3-tag-interactive-daemon-mgmtpdf)
+    - [🔎Lab 4: Docker-First-Images-And-Containers-LAB4-Commit-Own-Image.pdf](#lab-4-docker-first-images-and-containers-lab4-commit-own-imagepdf)
+    - [🔎Lab 5: Docker-First-Images-And-Containers-LAB5-Commit-Own-Image.pdf](#lab-5-docker-first-images-and-containers-lab5-commit-own-imagepdf)
 3. [Links](#links)
 
 ---
@@ -24,7 +24,7 @@ This file contains all related information regarding the lab of the week in ques
 
 ## 🔬Labs
 
-### 🔎Lab 1: First images and containers
+### 🔎Lab 1: Docker-First-Images-And-Containers-LAB1-SimpleHelloWorld.pdf
 
 1. Download the busybox image
 
@@ -61,7 +61,7 @@ This file contains all related information regarding the lab of the week in ques
     > **Note:** If the image is not found locally, it will be downloaded from the Docker Hub.
 
 
-### 🔎Lab 2: Exploring docker with Alpine: a step-by-step guide
+### 🔎Lab 2: Docker-First-Images-And-Containers-LAB2-Images-And-Containers.pdf
 
 1. Download the alpine image
 
@@ -190,7 +190,7 @@ This file contains all related information regarding the lab of the week in ques
     ```
     > **Note:** `<container ID>` is the ID of the container that you want to start.
 
-### 🔎Lab 3: Docker operations and container management (Exploration)
+### 🔎Lab 3: Docker-First-Images-And-Containers-LAB3-Tag-Interactive-Daemon-Mgmt.pdf
 
 1. Question 1
 
@@ -336,7 +336,7 @@ This file contains all related information regarding the lab of the week in ques
     - `unpause` - Unpause all processes within one or more containers
     - `kill` - Kill one or more running containers
 
-### 🔎Lab 4: Creating and sharing custom docker images (Exploration)
+### 🔎Lab 4: Docker-First-Images-And-Containers-LAB4-Commit-Own-Image.pdf
 
 How to create a Docker image from a container?
 
@@ -401,7 +401,7 @@ Test the image by running the following command:
 docker container run ourfiglet:1.0 figlet "Hello Docker"
 ```
 
-### 🔎Lab 5: Building a custom Apache webserver image in docker (Exploration)
+### 🔎Lab 5: Docker-First-Images-And-Containers-LAB5-Commit-Own-Image.pdf
 
 We will create our own customized apache webserver image…
 
