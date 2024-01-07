@@ -111,3 +111,5 @@ docker container -it exec ddf45e66f531 /bin/bash # Go into a running container. 
 
 
 docker stop $(docker ps -q) # Stop all containers
+
+docker rmi -f $(docker images | grep busybox | awk '{print $3}') # Remove all images with the name busybox (force)
