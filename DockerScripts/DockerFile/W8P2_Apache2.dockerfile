@@ -26,6 +26,9 @@ RUN echo "<!DOCTYPE html><html><head><title>Hello World Page</title><style>body 
 RUN ln -sf /dev/stdout /var/log/apache2/access.log && \
     ln -sf /dev/stderr /var/log/apache2/error.log
 
+# Set the log directory PATH
+ENV APACHE_LOG_DIR /var/log/apache2
+
 # Expose port 80
 EXPOSE 80
 
