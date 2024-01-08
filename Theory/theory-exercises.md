@@ -1057,7 +1057,7 @@ sudo ./deadlock
     > The data (heap) and code (machine code) memory segments are shared by threads. The stack memory segment is not shared by threads. Each thread has its own stack memory segment.
 
 6. What is the difference between a process and a thread?
-    > A process is an instance of a program that is being executed. A thread is a sequence of instructions that can be executed independently of other threads.
+    > A process is a program that is being executed. A thread is a part of a process that can be executed independently.
 
 7. What are the advantages and disadvantages of threads?
     > The advantages of threads are that they are lightweight and they share memory. The disadvantages of threads are that they are difficult to debug and they are difficult to synchronize.
