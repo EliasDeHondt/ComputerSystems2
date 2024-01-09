@@ -109,6 +109,9 @@ docker container run -d ubuntu:latest tail -f /dev/null # Start container and ke
 docker container -it exec ddf45e66f531 /bin/bash # Go into a running container. [running]
 
 
+docker run -it ubuntu /bin/bash # Start container and go into the container. [stop]
+docker run -d ubuntu tail -f /dev/null
+
 
 docker stop $(docker ps -q) # Stop all containers
 
