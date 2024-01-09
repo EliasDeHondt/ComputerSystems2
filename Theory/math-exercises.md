@@ -135,7 +135,7 @@ This is a collection of math exercises for the course Operating Systems 2. The e
 - Number of segments?
     > **01**
 
-### 📝Exercise 2: Segment 1
+### 📝Exercise 2: Segment 2
 
 - 2 bits voor segmenten.
 - Logical address: 1010 1100 0110 1101
@@ -147,7 +147,7 @@ This is a collection of math exercises for the course Operating Systems 2. The e
     - 11: 1001 1001 0110 1010, 0000 0000 0010 0000
 
 - What is the physical address?
-    > **10 1100 0110 1101 + 1011 0000 0110 1011 = 1101 1100 1001 0100**
+    > **10 1100 0110 1101 + 1011 0000 0110 1011 = 1101 1100 1101 1000**
 
 - Offset within segment greater than length?
     > **Yes**
