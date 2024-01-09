@@ -58,7 +58,6 @@ Subject: **Intro Install First Images & Containers**
     # or
     docker run busybox echo "Hello World!"
     ```
-    ```
     > **Note:** If the image is not found locally, it will be downloaded from the Docker Hub.
 
 
