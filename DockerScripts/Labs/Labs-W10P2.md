@@ -3,12 +3,13 @@
 
 ## 📘Table of Contents
 
-1. [Introduction](#introduction)
-2. [Labs](#labs)
-    - [🔎Lab 1: Docker-Networking-LAB1-Basic-Checks.pdf](#lab-1-docker-networking-lab1-basic-checkspdf)
-    - [🔎Lab 2: Docker-Networking-LAB2-IPs-And-Ports.pdf](#lab-2-docker-networking-lab2-ips-and-portspdf)
-    - [🔎Lab 3: Docker-Networking-LAB3-DIY.pdf](#lab-3-docker-networking-lab3-diypdf)
-3. [Links](#links)
+1. [📘Table of Contents](#📘table-of-contents)
+2. [🖖Introduction](#🖖introduction)
+3. [🔬Labs](#🔬labs)
+    1. [🔎Lab 1: Docker-Networking-LAB1-Basic-Checks.pdf](#🔎lab-1-docker-networking-lab1-basic-checkspdf)
+    2. [🔎Lab 2: Docker-Networking-LAB2-IPs-And-Ports.pdf](#🔎lab-2-docker-networking-lab2-ips-and-portspdf)
+    3. [🔎Lab 3: Docker-Networking-LAB3-DIY.pdf](#🔎lab-3-docker-networking-lab3-diypdf)
+4. [🔗Links](#🔗links)
 
 ---
 

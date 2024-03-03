@@ -3,19 +3,20 @@
 
 ## 📘Table of Contents
 
-1. [Introduction](#introduction)
-2. [Labs](#labs)
-    - [🔎Lab 1: Docker-DockerFile-LAB1-A-SimpleHelloWorld.pdf](#lab-1-docker-dockerfile-lab1-a-simplehelloworldpdf)
-    - [🔎Lab 2: Docker-DockerFile-LAB1-B-Starwars.pdf](#lab-2-docker-dockerfile-lab1-b-starwarspdf)
-    - [🔎Lab 3: Docker-DockerFile-LAB2-A-Layering-UFS.pdf](#lab-3-docker-dockerfile-lab2-a-layering-ufspdf)
-    - [🔎Lab 4: Docker-DockerFile-LAB2-B-Layering.pdf](#lab-4-docker-dockerfile-lab2-b-layeringpdf)
-    - [🔎Lab 5: Docker-DockerFile-LAB3-AdvancedDockerfile.pdf](#lab-5-docker-dockerfile-lab3-advanceddockerfilepdf)
-    - [🔎Lab 6: Docker-DockerFile-LAB4-DIY.pdf](#lab-6-docker-dockerfile-lab4-diypdf)
-    - [🔎Lab 7: Docker-DockerFile-LAB5-AdvancedDockerfile.pdf](#lab-7-docker-dockerfile-lab5-advanceddockerfilepdf)
-    - [🔎Lab 8: Docker-DockerFile-LAB6-UserDockerfile.pdf](#lab-8-docker-dockerfile-lab6-userdockerfilepdf)
-    - [🔎Lab 9: Docker-DockerFile-LAB7-EntrypointDockerfile.pdf](#lab-9-docker-dockerfile-lab7-entrypointdockerfilepdf)
-    - [🔎Lab 10: Docker-DockerFile-LAB8-Persistence.pdf](#lab-10-docker-dockerfile-lab8-persistencepdf)
-3. [Links](#links)
+1. [📘Table of Contents](#📘table-of-contents)
+2. [🖖Introduction](#🖖introduction)
+3. [🔬Labs](#🔬labs)
+    1. [🔎Lab 1: Docker-DockerFile-LAB1-A-SimpleHelloWorld.pdf](#🔎lab-1-docker-dockerfile-lab1-a-simplehelloworldpdf)
+    2. [🔎Lab 2: Docker-DockerFile-LAB1-B-Starwars.pdf](#🔎lab-2-docker-dockerfile-lab1-b-starwarspdf)
+    3. [🔎Lab 3: Docker-DockerFile-LAB2-A-Layering-UFS.pdf](#🔎lab-3-docker-dockerfile-lab2-a-layering-ufspdf)
+    4. [🔎Lab 4: Docker-DockerFile-LAB2-B-Layering.pdf](#🔎lab-4-docker-dockerfile-lab2-b-layeringpdf)
+    5. [🔎Lab 5: Docker-DockerFile-LAB3-AdvancedDockerfile.pdf](#🔎lab-5-docker-dockerfile-lab3-advanceddockerfilepdf)
+    6. [🔎Lab 6: Docker-DockerFile-LAB4-DIY.pdf](#🔎lab-6-docker-dockerfile-lab4-diypdf)
+    7. [🔎Lab 7: Docker-DockerFile-LAB5-AdvancedDockerfile.pdf](#🔎lab-7-docker-dockerfile-lab5-advanceddockerfilepdf)
+    8. [🔎Lab 8: Docker-DockerFile-LAB6-UserDockerfile.pdf](#🔎lab-8-docker-dockerfile-lab6-userdockerfilepdf)
+    9. [🔎Lab 9: Docker-DockerFile-LAB7-EntrypointDockerfile.pdf](#🔎lab-9-docker-dockerfile-lab7-entrypointdockerfilepdf)
+    10. [🔎Lab 10: Docker-DockerFile-LAB8-Persistence.pdf](#🔎lab-10-docker-dockerfile-lab8-persistencepdf)
+4. [🔗Links](#🔗links)
 
 ---
 

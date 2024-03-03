@@ -3,14 +3,15 @@
 
 ## 📘Table of Contents
 
-1. [Introduction](#introduction)
-2. [Labs](#labs)
-    - [🔎Lab 1: Docker-Orchestration-LAB1-Install-Compose.pdf](#lab-1-docker-orchestration-lab1-install-composepdf)
-    - [🔎Lab 2: Docker-Orchestration-LAB2-Docker-Compose-Wordpress.pdf](#lab-2-docker-orchestration-lab2-docker-compose-wordpresspdf)
-    - [🔎Lab 3: Docker-Orchestration-LAB3-Simple-Webapp.pdf](#lab-3-docker-orchestration-lab3-simple-webapppdf)
-    - [🔎Lab 4: Docker-Orchestration-LAB4-Docker-Compose-Pythonweb.pdf](#lab-4-docker-orchestration-lab4-docker-compose-pythonwebpdf)
-    - [🔎Lab 5: Docker-Orchestration-LAB5-Docker-Machine.pdf](#lab-5-docker-orchestration-lab5-docker-machinepdf)
-3. [Links](#links)
+1. [📘Table of Contents](#📘table-of-contents)
+2. [🖖Introduction](#🖖introduction)
+3. [🔬Labs](#🔬labs)
+    1. [🔎Lab 1: Docker-Orchestration-LAB1-Install-Compose.pdf](#🔎lab-1-docker-orchestration-lab1-install-composepdf)
+    2. [🔎Lab 2: Docker-Orchestration-LAB2-Docker-Compose-Wordpress.pdf](#🔎lab-2-docker-orchestration-lab2-docker-compose-wordpresspdf)
+    3. [🔎Lab 3: Docker-Orchestration-LAB3-Simple-Webapp.pdf](#🔎lab-3-docker-orchestration-lab3-simple-webapppdf)
+    4. [🔎Lab 4: Docker-Orchestration-LAB4-Docker-Compose-Pythonweb.pdf](#🔎lab-4-docker-orchestration-lab4-docker-compose-pythonwebpdf)
+    5. [🔎Lab 5: Docker-Orchestration-LAB5-Docker-Machine.pdf](#🔎lab-5-docker-orchestration-lab5-docker-machinepdf)
+4. [🔗Links](#🔗links)
 
 ---
 
