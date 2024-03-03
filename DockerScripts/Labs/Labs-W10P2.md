@@ -1,10 +1,6 @@
 ![logo](/Images/logo.png)
 # 💙🤍Labs W10P2🤍💙
 
-This file contains all related information regarding the lab of the week in question.
-
----
-
 ## 📘Table of Contents
 
 1. [Introduction](#introduction)
@@ -89,9 +85,11 @@ docker inspect -f '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}' a82
 
 We will use an apache webserver for our next tests. This Dockerfile will create the apacheserver:
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the 22.04 version of ubuntu as the base image
 FROM ubuntu:22.04
@@ -181,9 +179,11 @@ sudo iptables -t nat -L -n
 
 Create your own image of a network-related software of your own choice. The image should work as if the software has been started normally.
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use a base image
 FROM ubuntu:22.04

@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Schrijven van een backup script
 errorlog="/var/log/error_$(basename $0).log"
 backuplog="/var/log/backup_$(basename $0).log"

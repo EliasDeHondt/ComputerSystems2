@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 adir="/etc/apache2"
 confs="$adir/apache2.conf $adir/ports.conf"
 

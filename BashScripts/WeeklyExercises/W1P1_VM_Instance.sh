@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Maak een VM-instance aan met Rocket Chat-server.
 
 INSTANCE_NAME=rocketChatServer-vm

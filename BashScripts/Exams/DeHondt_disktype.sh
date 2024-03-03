@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # Functie: Zoek de minimale disk size voor een bepaalde disktype en zone
 reset='\e[0m'
 rood='\e[0;31m'

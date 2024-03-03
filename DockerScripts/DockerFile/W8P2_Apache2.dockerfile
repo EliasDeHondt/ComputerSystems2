@@ -1,6 +1,8 @@
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 ## How to build and run this image
 # docker build . -f apache2.dockerfile -t apache2
 # docker run -d -p 8080:80 --rm -v /log:/var/log/apache2 --name apache2in1 apache2:latest

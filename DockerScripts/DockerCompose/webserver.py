@@ -1,7 +1,9 @@
 #!/usr/bin/env python3
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # python3 webserver.py
 
 # If necessary install python with:

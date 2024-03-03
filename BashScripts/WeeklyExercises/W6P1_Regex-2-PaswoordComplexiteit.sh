@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: De gebruiker een paswoord laten ingeven dat voldoet aan volgende criteria ->
 regex="^[A-Z]{1}.{7,}[0-9]{2,}"
 

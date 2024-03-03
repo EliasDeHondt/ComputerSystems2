@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Script schrijven dat automatisch met ssh verbindt met "expect"
 filedir="expect.sh"
 host="127.0.0.1"

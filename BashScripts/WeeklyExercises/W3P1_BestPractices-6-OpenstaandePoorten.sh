@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Vinden welk proces een bepaalde poort gebruikt
 error_geen_netcat="Het programma netcat is niet geïnstalleerd"
 

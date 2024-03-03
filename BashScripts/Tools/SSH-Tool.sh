@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: SSH Tool om verbinding te maken met een remote server,
 # een commando uit te voeren op een remote server of data te uploaden naar een remote server
 reset='\e[0m'

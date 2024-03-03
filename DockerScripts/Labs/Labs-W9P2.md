@@ -1,10 +1,6 @@
 ![logo](/Images/logo.png)
 # 💙🤍Labs W9P2🤍💙
 
-This file contains all related information regarding the lab of the week in question.
-
----
-
 ## 📘Table of Contents
 
 1. [Introduction](#introduction)
@@ -87,9 +83,11 @@ curl http://localhost:5001/v2/_catalog
 Extra assignment:
 1. Create a Dockerfile that uses Ubuntu as a base and additionally the `Python3` package installs.
 ```Dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 FROM ubuntu:22.04
 
@@ -135,9 +133,11 @@ docker push kdgstudents/test:1.0
 
 We will create a data volume through a Dockerfile. Here’s the Dockerfile:    
 ```Dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Base image (Ubuntu 14.04)
 FROM ubuntu:14.04
@@ -304,9 +304,11 @@ If you run a detached webserver within a container, there’s no easy way to rea
 
 Here are the steps:
 ```Dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Base image is Ubuntu
 FROM ubuntu:14.04
@@ -383,9 +385,11 @@ In this example we will run a data-only container which contains the log files t
 
 Here’s the Dockerfile with the `/var/log/apache2` data volume using the `VOLUME` instruction. The `/var/log/apache2` data volume is a direct mapping to `APACHE_LOG_DIR`, the environment variable set in the Dockerfile we will use to launch the webserver.
 ```Dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Base image is BusyBox
 FROM busybox:latest
@@ -429,9 +433,11 @@ As per the output, the container exits with the exit value 0.
 
 Here’s the Dockerfile for the apache2 webserver:
 ```Dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Base image is Ubuntu
 FROM ubuntu:14.04

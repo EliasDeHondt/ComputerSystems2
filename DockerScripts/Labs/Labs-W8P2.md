@@ -1,10 +1,6 @@
 ![logo](/Images/logo.png)
 # 💙🤍Labs W8P2🤍💙
 
-This file contains all related information regarding the lab of the week in question.
-
----
-
 ## 📘Table of Contents
 
 1. [Introduction](#introduction)
@@ -34,9 +30,11 @@ Subject: **Dockerfile**
 
 Create a file called dockerfile insert the following instructions (Explain what it does):
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the latest busybox image as base image
 FROM busybox:latest
@@ -73,9 +71,11 @@ docker tag <image-id> hello-world:1.0
 Put this Dockerfile in a directory called starwars:
 
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 
 # Use the latest version of ubuntu as the base image
@@ -200,9 +200,11 @@ sudo mount -t overlay -o lowerdir=base1:base2:base3,upperdir=diff,workdir=workdi
 
 Create a file called dockerfile insert the following instructions:
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 FROM ubuntu:14.04
 
@@ -284,9 +286,11 @@ The file we just created is the javascript code for our server. As you can proba
 
 Create a file named DOCKERFILE and copy the following content into it. Again, help creating this file with Linux editors is here.
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 FROM alpine:latest
 
@@ -319,9 +323,11 @@ docker run hello
 
 Create Dockerfiles that test the following commands (seen in theory) You can use whatever base image you want…
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Defining the application structure
 # notes/
@@ -381,9 +387,11 @@ docker run --rm notes
 
 We are going to create a static web-server.
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the 22.04 version of ubuntu as the base image
 FROM ubuntu:22.04
@@ -430,9 +438,11 @@ docker run --rm apache2
 
 We are going to run a command as a specific user.
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the 22.04 version of ubuntu as the base image
 FROM ubuntu:22.04
@@ -468,9 +478,11 @@ docker run --rm usernameprint
 
 We will use ENTRYPOINT to change the default shell into another command
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the latest version of ubuntu as the base image
 FROM busybox:latest
@@ -506,9 +518,11 @@ docker run --rm entrypoint
 
 We will prove that without caution, docker images give a lot of information.
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the latest version of ubuntu as the base image
 FROM alpine:latest
@@ -538,9 +552,11 @@ docker run --rm persistence1
 ```
 
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use the previously created persistence1 image as the base image
 FROM persistence1

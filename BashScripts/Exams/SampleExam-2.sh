@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: En script dat een file opent met daarin een lijst van namen en urls.
 # Het script moet de namen en urls uit de file halen en in een nieuwe file plaatsen.
 reset='\e[0m'

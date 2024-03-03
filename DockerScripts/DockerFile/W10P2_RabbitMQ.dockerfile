@@ -1,6 +1,8 @@
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # docker build . -f W10P2_RabbitMQ.dockerfile -t rabbitmq
 # docker run -d -p 5672:5672 -p 15672:15672 --rm --name RabbitMQ rabbitmq:latest

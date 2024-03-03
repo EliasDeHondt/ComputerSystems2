@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Benchmark test voor apache webserver oproepen
 error_geen_ab="Het programma ab is nodig. Installeren kan met sudo apt-get install apache2-utils"
 error_url="De url is niet bereikbaar"

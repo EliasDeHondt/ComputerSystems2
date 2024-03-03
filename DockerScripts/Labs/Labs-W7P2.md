@@ -1,20 +1,10 @@
 ![logo](/Images/logo.png)
 # 💙🤍Labs W7P2🤍💙
 
-This file contains all related information regarding the lab of the week in question.
-
----
-
 ## 📘Table of Contents
 
-1. [Introduction](#introduction)
-2. [Labs](#labs)
-    - [🔎Lab 1: Docker-First-Images-And-Containers-LAB1-SimpleHelloWorld.pdf](#lab-1-docker-first-images-and-containers-lab1-simplehelloworldpdf)
-    - [🔎Lab 2: Docker-First-Images-And-Containers-LAB2-Images-And-Containers.pdf](#lab-2-docker-first-images-and-containers-lab2-images-and-containerspdf)
-    - [🔎Lab 3: Docker-First-Images-And-Containers-LAB3-Tag-Interactive-Daemon-Mgmt.pdf](#lab-3-docker-first-images-and-containers-lab3-tag-interactive-daemon-mgmtpdf)
-    - [🔎Lab 4: Docker-First-Images-And-Containers-LAB4-Commit-Own-Image.pdf](#lab-4-docker-first-images-and-containers-lab4-commit-own-imagepdf)
-    - [🔎Lab 5: Docker-First-Images-And-Containers-LAB5-Commit-Own-Image.pdf](#lab-5-docker-first-images-and-containers-lab5-commit-own-imagepdf)
-3. [Links](#links)
+1. [📘Table of Contents](#📘table-of-contents)
+
 
 ---
 

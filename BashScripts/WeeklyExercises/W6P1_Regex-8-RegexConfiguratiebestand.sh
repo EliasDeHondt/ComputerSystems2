@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Dit script controleert of er een servernaam is ingesteld voor Apache.
 configuratiebestand="/etc/apache2/apache2.conf"
 command=$(cat $configuratiebestand | grep -E "ServerName")

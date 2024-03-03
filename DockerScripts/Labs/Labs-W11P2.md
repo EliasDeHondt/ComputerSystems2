@@ -1,10 +1,6 @@
 ![logo](/Images/logo.png)
 # 💙🤍Labs W11P2🤍💙
 
-This file contains all related information regarding the lab of the week in question.
-
----
-
 ## 📘Table of Contents
 
 1. [Introduction](#introduction)
@@ -39,9 +35,11 @@ Use docker-compose and environment variables to start up a two container, persis
 
 Open a file docker-compose.yml and add following data add values for the environment variables:
 ```yaml
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 version: '3' 
 services: 
@@ -148,9 +146,11 @@ server.listen(80);
 The following text is the content of `dockerfile` that packs the `node.js` image, the redis driver for node.js, and the `example.js` file as defined earlier:
 - Name of file: ***dockerfile***
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Base image is node.js
 FROM node:latest
@@ -172,9 +172,11 @@ ADD example.js /myapp/example.js
 The following text is from the `docker-compose.yml` file that the defines the service orchestration for docker compose tool to act upon:
 - Name of file: ***docker-compose.yml***
 ```yaml
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 version: '3'
 services:
@@ -267,9 +269,11 @@ Create a new Python file called:
 - Name of file: ***webserver.py***
 ```python
 #!/usr/bin/env python3
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # If necessary install python with:
 # sudo apt-get install python3 pip3
@@ -310,9 +314,11 @@ In webserver.py change hostName = `127.0.0.1` to hostName = `172.16.16.16`. We w
 Create a Dockerfile:
 - Name of file: ***dockerfile***
 ```dockerfile
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 # Use Python 3.6 on Debian Stretch as the base image
 FROM python:3.6-stretch
@@ -365,9 +371,11 @@ Create a `docker-compose.yml` file with following options:
 - `ports:` maps `8765` on the host to `8765` on the container.
 
 ```yaml
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 
 version: "3"
 services:

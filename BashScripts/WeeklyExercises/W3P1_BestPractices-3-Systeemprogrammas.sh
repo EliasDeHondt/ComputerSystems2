@@ -1,7 +1,9 @@
 #!/bin/bash
-######################
-# Van Elias De Hondt #
-######################
+############################
+# @author Elias De Hondt   #
+# @see https://eliasdh.com #
+# @since 01/03/2024        #
+############################
 # FUNCTIE: Weergeven programma's die vanuit sbin zijn opgestart.
 # De gegevens van alle programma's staan in de directory /proc/PID/cmdline.
 # (met PID= nummer van het proces)
